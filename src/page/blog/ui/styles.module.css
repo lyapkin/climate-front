@@ -1,0 +1,28 @@
+.blog {
+  display: grid;
+  grid-template-areas:
+    "title rubrics"
+    "content content"
+    "pagination pagination";
+  grid-template-columns: 1fr auto;
+  row-gap: 40px;
+  column-gap: 40px;
+  padding-bottom: 128px;
+  align-items: center;
+}
+.blog__title {
+  grid-area: title;
+}
+.blog__rubrics {
+  grid-area: rubrics;
+}
+.blog__content {
+  grid-area: content;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+}
+.blog__pagination {
+  grid-area: pagination;
+  justify-content: end;
+}

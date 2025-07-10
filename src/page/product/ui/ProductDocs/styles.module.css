@@ -1,0 +1,29 @@
+.docs {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.docs__item {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  font-weight: 600;
+  font-size: 18px;
+  letter-spacing: -0.04em;
+  color: var(--c);
+}
+
+.docs__icon {
+  display: flex;
+}
+
+.docs__icon svg {
+  color: var(--main-color);
+}
+
+@media (hover: hover) {
+  .docs__item:hover {
+    color: var(--main-color);
+  }
+}

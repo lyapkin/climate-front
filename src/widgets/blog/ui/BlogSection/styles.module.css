@@ -1,0 +1,63 @@
+.blog {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  grid-template-rows: auto auto;
+  grid-template-areas:
+    "title rubrics"
+    "content content"
+    "link link";
+  column-gap: 88px;
+  row-gap: 56px;
+  align-items: center;
+}
+
+.blog__title {
+  grid-area: title;
+  align-self: center;
+  position: relative;
+  width: 644px;
+}
+
+.blog__rubrics {
+  grid-area: rubrics;
+  min-width: 0;
+  position: relative;
+}
+
+.blog__content {
+  grid-area: content;
+  display: flex;
+  gap: 8px;
+  justify-content: flex-start;
+  overflow: auto;
+  scrollbar-width: none;
+  margin: -128px -1000px;
+  padding: 128px 1000px;
+}
+
+.blog__link {
+  grid-area: link;
+  width: 320px;
+  height: 64px;
+  justify-self: center;
+  position: relative;
+}
+
+@media only screen and (max-width: 1120px) {
+  .blog {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto auto auto;
+    grid-template-areas:
+      "title"
+      "rubrics"
+      "content"
+      "link";
+    row-gap: 32px;
+  }
+}
+
+@media only screen and (max-width: 580px) {
+  .blog__link {
+    width: 100%;
+  }
+}

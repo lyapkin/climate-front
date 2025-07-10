@@ -1,0 +1,31 @@
+.expender__body {
+  overflow-y: hidden;
+  box-sizing: content-box;
+}
+.expender__body > * {
+  max-height: var(--maxHeight);
+}
+.expender_open .expender__body {
+  max-height: var(--maxHeight);
+  height: fit-content;
+  transition: max-height 0.3s ease-in-out, padding 0.3s ease-in-out;
+}
+
+.expender_close .expender__body {
+  max-height: 0;
+  padding-top: 0;
+  padding-bottom: 0;
+  transition: max-height 0.3s ease-in-out, padding 0.3s ease-in-out;
+}
+
+.expender__indicator {
+  transition: transform ease 0.3s;
+}
+
+.expender_open .expender__indicator {
+  transform: rotateZ(180deg);
+}
+
+.expender_close .expender__indicator {
+  transform: rotateZ(0deg);
+}

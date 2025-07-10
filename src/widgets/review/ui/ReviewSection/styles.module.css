@@ -1,0 +1,34 @@
+.review {
+  display: grid;
+  grid-template-columns: 400px 1fr;
+  grid-template-rows: repeat(3, auto);
+  grid-template-areas:
+    "title rating"
+    "content content"
+    "link link";
+  row-gap: 56px;
+  align-items: center;
+}
+.review__title {
+  grid-area: title;
+}
+.review__rating {
+  grid-area: rating;
+  justify-self: end;
+}
+.review__content {
+  grid-area: content;
+  display: flex;
+  gap: 4px;
+  justify-content: flex-start;
+  overflow: auto;
+  scrollbar-width: none;
+  margin: -128px -1000px;
+  padding: 128px 1000px;
+}
+.review__link {
+  grid-area: link;
+  width: 324px;
+  height: 80px;
+  justify-self: center;
+}

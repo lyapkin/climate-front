@@ -1,0 +1,29 @@
+.price {
+  display: grid;
+  grid-template-rows: auto 1fr;
+  grid-template-areas:
+    "title title"
+    "result full";
+  align-items: end;
+}
+.price__title {
+  grid-area: title;
+  font-weight: 500;
+  font-size: 14px;
+  letter-spacing: -0.04em;
+  color: var(--c40);
+}
+.price__result {
+  grid-area: result;
+  font-weight: 600;
+  font-size: 24px;
+  letter-spacing: -0.04em;
+  color: var(--c);
+}
+.price__full {
+  grid-area: full;
+  font-weight: 500;
+  font-size: 18px;
+  letter-spacing: -0.04em;
+  color: var(--c40);
+}

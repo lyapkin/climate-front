@@ -1,0 +1,49 @@
+.promo {
+  grid-column: 1/-1;
+  height: 264px;
+  padding: 40px;
+  display: grid;
+  grid-template-areas:
+    "title subtitle ."
+    "button date .";
+  grid-template-columns: 30% 25% 1fr;
+  column-gap: 64px;
+  align-items: start;
+  background-color: #fbfbfb;
+  border-radius: var(--radius1);
+  background-image: url("/images/form/plugin-bg.png");
+  background-repeat: no-repeat;
+  background-position: right bottom;
+  background-size: 40%;
+}
+.promo__title {
+  grid-area: title;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 32px;
+  text-transform: uppercase;
+}
+.promo__subtitle {
+  grid-area: subtitle;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 24px;
+  color: var(--c40);
+}
+.promo__date {
+  grid-area: date;
+}
+.promo__date > *:first-child {
+  background-color: #fff;
+  color: var(--main-color);
+}
+.promo__date > *:last-child {
+  font-weight: 600;
+  font-size: 14px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--c40);
+}
+.promo__button {
+  grid-area: button;
+}

@@ -1,0 +1,123 @@
+.card,
+.cardSkeleton {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  height: 100%;
+  min-width: 460px;
+  border-radius: var(--radius1);
+  overflow: hidden;
+  position: relative;
+  background-color: #fafafa;
+}
+
+.card__date {
+  position: absolute;
+  top: 16px;
+  left: 0;
+  padding: 8px 16px;
+  background-color: #fff;
+  border-top-right-radius: var(--radius3);
+  border-bottom-right-radius: var(--radius3);
+  font-weight: 600;
+  font-size: 12px;
+  letter-spacing: -0.04em;
+  color: var(--main-color);
+}
+
+.card__image {
+  position: relative;
+  aspect-ratio: 460 / 224;
+}
+
+.card__title {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  height: 48px;
+  letter-spacing: -0.04em;
+  text-transform: uppercase;
+  color: var(--c);
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+  text-overflow: ellipsis;
+}
+
+.card__excerpt {
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 30px;
+  height: 90px;
+  letter-spacing: -0.04em;
+  color: var(--c40);
+  flex-grow: 1;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  line-clamp: 3;
+  text-overflow: ellipsis;
+}
+
+.card__link {
+  width: 320px;
+  height: 64px;
+  box-sizing: content-box;
+}
+.card__link a {
+  width: 100%;
+  height: 100%;
+  background-color: #fff;
+  font-weight: 400;
+  font-size: 16px;
+  letter-spacing: -0.04em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--main-color);
+  border-radius: var(--radius1);
+  display: flex;
+  gap: 80px;
+  justify-content: space-between;
+  padding: 0 16px 0 40px;
+}
+.card__linkIcon {
+  width: 36px;
+  aspect-ratio: 1/1;
+  background: var(--brand-gradient);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: var(--radius1);
+}
+
+@media (hover: hover) {
+  .card__link a:hover {
+    background: var(--brand-gradient);
+    color: #fff;
+  }
+}
+
+.card__title,
+.card__excerpt,
+.card__link {
+  padding-left: 32px;
+  padding-right: 32px;
+}
+.card__link {
+  padding-bottom: 24px;
+}
+
+@media only screen and (max-width: 608px) {
+  .card {
+    width: 256px;
+  }
+
+  .card__title,
+  .card__excerpt {
+    padding: 0 16px;
+  }
+}

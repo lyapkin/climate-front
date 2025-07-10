@@ -1,0 +1,50 @@
+.rubricsBlock {
+  display: flex;
+  justify-content: flex-end;
+}
+.rubrics {
+  display: flex;
+  gap: 8px;
+  height: 100%;
+  overflow-x: scroll;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+.rubrics::-webkit-scrollbar {
+  display: none;
+}
+
+.rubrics__item {
+  height: 56px;
+  font-weight: 700;
+  font-size: 16px;
+  text-transform: uppercase;
+  color: var(--c40);
+  border: 1px solid #d4e2e7;
+  border-radius: var(--radius2);
+}
+
+.rubricButton {
+  height: 100%;
+  padding: 0 24px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  white-space: nowrap;
+}
+
+.rubrics__item_active {
+  background: var(--brand-gradient);
+  color: #fff;
+  border: none;
+}
+
+@media only screen and (max-width: 900px) {
+  .rubrics__item {
+    height: 40px;
+  }
+  .rubricButton {
+    font-size: 12px;
+    padding: 0 16px;
+  }
+}

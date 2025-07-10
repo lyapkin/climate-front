@@ -1,0 +1,41 @@
+.consultation {
+  grid-column: 1 / -1;
+  background-color: #fbfbfb;
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  background-image: url("/images/form/plugin-bg.png");
+  background-repeat: no-repeat;
+  background-position: right bottom;
+  background-size: 40%;
+  border-radius: var(--radius1);
+  box-shadow: -5px 8px 21px 0px rgba(166, 166, 166, 0.1),
+    -21px 31px 38px 0px rgba(166, 166, 166, 0.09),
+    -48px 71px 51px 0px rgba(166, 166, 166, 0.05),
+    -85px 126px 61px 0px rgba(166, 166, 166, 0.01),
+    -133px 197px 66px 0px rgba(166, 166, 166, 0);
+  position: relative;
+}
+.consultation__title {
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 32px;
+  text-transform: uppercase;
+  color: var(--c);
+}
+.consultation__subtitle {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: -0.04em;
+  color: var(--c);
+}
+.consultation__title,
+.consultation__subtitle {
+  width: 568px;
+}
+.consultation__button {
+  width: 268px;
+  height: 64px;
+}

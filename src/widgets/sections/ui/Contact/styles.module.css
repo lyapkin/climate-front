@@ -1,0 +1,37 @@
+.contactSection {
+  background-image: url("/images/form/bg.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.contact {
+  width: 846px;
+  background-color: #fff;
+  border-radius: var(--radius2);
+  padding: 56px;
+  box-shadow: -5px 8px 21px 0px rgba(166, 166, 166, 0.1),
+    -21px 31px 38px 0px rgba(166, 166, 166, 0.09),
+    -48px 71px 51px 0px rgba(166, 166, 166, 0.05),
+    -85px 126px 61px 0px rgba(166, 166, 166, 0.01),
+    -133px 197px 66px 0px rgba(166, 166, 166, 0);
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+.contact__title {
+  font-weight: 700;
+  font-size: 40px;
+  line-height: 135%;
+  letter-spacing: -0.04em;
+  text-transform: uppercase;
+  color: var(--c);
+  margin-bottom: 40px;
+}
+.contact__subtitle {
+  max-width: 400px;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 24px;
+  letter-spacing: -0.04em;
+  color: var(--c);
+}

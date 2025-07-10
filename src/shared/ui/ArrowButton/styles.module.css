@@ -1,0 +1,31 @@
+.button {
+  width: 64px;
+  height: 64px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--main-color);
+  color: #fff;
+  border: 1px solid rgba(244, 244, 244, 1);
+  border-radius: 50%;
+}
+
+.button:disabled {
+  background-color: #fff;
+  color: var(--main-color);
+  opacity: 0.8;
+}
+
+@media (hover: hover) {
+  .button:hover {
+    opacity: 0.8;
+  }
+}
+
+.button svg {
+  width: 40%;
+}
+
+.button__right svg {
+  transform: rotateZ(180deg);
+}

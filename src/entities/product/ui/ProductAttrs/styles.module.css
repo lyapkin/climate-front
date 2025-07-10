@@ -1,0 +1,30 @@
+.attrs {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.attrs__item {
+  display: flex;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.attrs__name {
+  font-weight: 500;
+  font-size: 20px;
+  letter-spacing: -0.04em;
+  color: var(--c40);
+  white-space: nowrap;
+  overflow: hidden;
+  flex-basis: 100%;
+}
+
+.attrs__value {
+  font-weight: 500;
+  font-size: 20px;
+  letter-spacing: -0.04em;
+  color: var(--c90);
+  white-space: nowrap;
+  flex-grow: 1;
+}

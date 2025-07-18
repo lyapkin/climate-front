@@ -5,10 +5,18 @@ type ProductImg = {
   url: string;
 };
 
+type AttributeValue = {
+  id: number;
+  name: string;
+};
+
 type Attribute = {
   id: number;
-  attr: string;
-  value: string;
+  attr: {
+    name: string;
+    unit: string;
+  };
+  values: AttributeValue[];
 };
 
 type ProductDoc = {

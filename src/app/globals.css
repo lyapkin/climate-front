@@ -135,66 +135,17 @@ textarea:disabled {
 }
 
 @media only screen and (max-width: 900px) {
+  .hero {
+    padding-top: 216px;
+  }
   .section-flex {
     gap: 32px;
   }
   .section-title {
-    font-size: 24px;
-    line-height: 40px;
+    font-size: 18px;
+    line-height: 30px;
   }
   .page-title {
     font-size: 22px;
   }
 }
-
-@media only screen and (max-width: 560px) {
-  /* .section {
-    padding: 32px 0;
-  } */
-  .section-title {
-    font-size: 18px;
-    line-height: 30px;
-  }
-}
-
-/* @media screen and (max-width: 1150px) {
-  .page {
-    padding-top: 120px;
-  }
-}
-
-@media screen and (max-width: 880px) {
-  .page {
-    padding-bottom: 56px;
-  }
-} */
-
-/* @media only screen and (max-width: 1480px) {
-  .container {
-    max-width: 1150px;
-  }
-}
-
-@media only screen and (max-width: 1280px) {
-  .container {
-    max-width: 1000px;
-  }
-}
-
-@media only screen and (max-width: 1024px) {
-  .container {
-    max-width: 718px;
-  }
-}
-
-@media only screen and (max-width: 768px) {
-  .container {
-    max-width: 526px;
-  }
-}
-
-@media only screen and (max-width: 576px) {
-  .container {
-    max-width: 90%;
-  }
-} */

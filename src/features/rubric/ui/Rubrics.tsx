@@ -11,16 +11,19 @@ const Rubrics = ({
   getRubricApi,
   className,
   all = true,
+  type = "state",
 }: RubricsProps) => {
   return (
-    <RubricProvider all={all}>
-      <div className={cn(s.rubricsBlock, className)}>
-        <Suspense fallback={<RubricsSkeleton />}>
-          <RubricsLoader getRubricApi={getRubricApi} />
-        </Suspense>
-      </div>
-      {children}
-    </RubricProvider>
+    <Suspense>
+      <RubricProvider all={all} type={type}>
+        <div className={cn(s.rubricsBlock, className)}>
+          <Suspense fallback={<RubricsSkeleton />}>
+            <RubricsLoader getRubricApi={getRubricApi} />
+          </Suspense>
+        </div>
+        {children}
+      </RubricProvider>
+    </Suspense>
   );
 };
 
@@ -28,6 +31,7 @@ interface RubricsProps extends PropsWithChildren {
   all?: boolean;
   getRubricApi: () => Promise<Rubric[]>;
   className?: string;
+  type?: "state" | "params";
 }
 
 export default Rubrics;

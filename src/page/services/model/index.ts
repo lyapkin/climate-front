@@ -1,1 +1,1 @@
-export { type Service, type ServicePart } from "./types";
+export { type Service, type ServiceOption } from "./types";

@@ -2,11 +2,11 @@
 import Button from "@/src/shared/ui/Button/Button";
 import s from "./styles.module.css";
 import { useCart } from "@/src/app/providers/CartProvider/CartProvider";
-import CheckIcon from "./CheckIcon";
 import Spinner from "@/src/shared/ui/loading/spinners/Spinner";
 import { ButtonHTMLAttributes } from "react";
 import { CartIcon } from "@/src/entities/cart";
 import cn from "classnames";
+import { CheckIcon } from "@/src/shared/icons";
 
 const AddToCart = ({ itemId, className, ...rest }: AddToCartProps) => {
   const { cart, plusItem } = useCart();

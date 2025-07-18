@@ -14,7 +14,7 @@
     0px 100px 80px 0px rgba(129, 129, 129, 0.07); */
   display: grid;
   grid-template-columns: 230px 200px 1fr 352px;
-  grid-template-rows: auto auto auto auto 120px;
+  grid-template-rows: auto 1fr auto auto 120px;
   grid-template-areas:
     "date date img aside"
     "title title img aside"
@@ -92,6 +92,7 @@
 }
 .promo__date {
   grid-area: date;
+  color: #fff;
 }
 .promo__img {
   grid-area: img;

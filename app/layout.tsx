@@ -3,7 +3,8 @@ import { montserrat } from "@/src/app/fonts";
 import "@/src/app/globals.css";
 import { CartProvider, QueryProvider } from "@/src/app/providers";
 import ClipPaths from "@/src/shared/components/clipPaths/ClipPaths";
-import { Footer, Header } from "@/src/widgets";
+import { Header } from "@/src/widgets/header";
+import { Footer } from "@/src/widgets/footer";
 
 export default function RootLayout({
   children,

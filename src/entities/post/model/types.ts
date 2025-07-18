@@ -1,9 +1,9 @@
 import { Metadata } from "@/src/shared/types";
 
-// export type BlogCategory = {
-//   id: number;
-//   name: string;
-// };
+export type BlogCategory = {
+  id: number;
+  name: string;
+};
 
 export type PostPreview = {
   id: number;
@@ -17,7 +17,6 @@ export type PostPreview = {
 export type PostContent = {
   id: number;
   name: string;
-  video?: string;
   content: string;
   metadata: Metadata | null;
 };

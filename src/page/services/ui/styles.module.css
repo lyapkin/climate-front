@@ -26,6 +26,8 @@
   grid-area: services;
   display: flex;
   gap: 16px;
+  overflow: auto;
+  scrollbar-width: none;
 }
 .content__card {
   grid-area: card;
@@ -53,6 +55,8 @@
   font-weight: 700;
   font-size: 12px;
   text-transform: uppercase;
+  width: auto;
+  white-space: nowrap;
 }
 .content__serviceItem_active {
   background: var(--brand-gradient);

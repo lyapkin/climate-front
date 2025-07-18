@@ -15,7 +15,11 @@ const PostCard = ({ post }: PostCardProps) => {
         />
       </Link>
       <time dateTime={post.created} className={s.card__date}>
-        {post.created}
+        {new Intl.DateTimeFormat("ru-RU", {
+          year: "numeric",
+          month: "numeric",
+          day: "numeric",
+        }).format(new Date(post.created))}
       </time>
       <p className={s.card__title}>
         <Link href={`/blog/${post.slug}/`}>{post.name}</Link>

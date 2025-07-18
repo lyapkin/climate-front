@@ -21,7 +21,7 @@ const PromoPlugin = () => {
   return (
     <div className={s.promo}>
       <p className={s.promo__title}>{data[0].name}</p>
-      <p className={s.promo__subtitle}>{data[0].subtitle}</p>
+      <p className={s.promo__subtitle}>{data[0].text}</p>
       <PromoDate date={data[0].date} className={s.promo__date} />
       <Button className={s.promo__button}>Забронировать</Button>
     </div>

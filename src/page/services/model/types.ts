@@ -1,4 +1,4 @@
-export type ServicePart = {
+export type ServiceOption = {
   id: number;
   name: string;
   price: number;
@@ -7,5 +7,5 @@ export type ServicePart = {
 export type Service = {
   id: number;
   name: string;
-  parts: ServicePart[];
+  options: ServiceOption[];
 };

@@ -1,6 +1,6 @@
 import { getProductDetailApi } from "@/src/entities/product";
 import { Product } from "@/src/page/product";
-import { Breadcrumbs, BreadcrumbsItem } from "@/src/widgets";
+import { Breadcrumbs, BreadcrumbsItem } from "@/src/widgets/breadcrumbs";
 
 const ProductPage = async ({
   params,

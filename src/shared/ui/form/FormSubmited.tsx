@@ -1,5 +1,5 @@
+import { CheckIcon } from "@/src/shared/icons";
 import CustomLink from "../CustomLink/CustomLink";
-import CheckIcon from "../icons/CheckIcon";
 import s from "./styles.module.css";
 
 const FormSubmited = () => {

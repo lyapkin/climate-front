@@ -1,6 +1,6 @@
 import { getCategoryApi } from "@/src/entities/category/api";
 import { Catalog } from "@/src/page/catalog";
-import { Breadcrumbs, BreadcrumbsItem } from "@/src/widgets";
+import { Breadcrumbs, BreadcrumbsItem } from "@/src/widgets/breadcrumbs";
 
 const CatalogPage = async ({
   params,

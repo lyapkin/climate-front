@@ -1,7 +1,10 @@
 .range {
   position: relative;
 }
-
+.range_disabled {
+  opacity: 0.3;
+  cursor: default;
+}
 .range__input {
   display: flex;
   height: 56px;

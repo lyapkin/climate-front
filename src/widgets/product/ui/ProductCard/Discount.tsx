@@ -1,4 +1,4 @@
-import { ProductPrice } from "../../../../entities/product/model/types";
+import { ProductBase } from "@/src/entities/product";
 import s from "./styles.module.css";
 
 const Discount = ({ discount }: DiscountProps) => {
@@ -8,7 +8,7 @@ const Discount = ({ discount }: DiscountProps) => {
 };
 
 export interface DiscountProps {
-  discount?: ProductPrice["discount"];
+  discount?: ProductBase["discount"];
 }
 
 export default Discount;

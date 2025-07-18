@@ -73,11 +73,17 @@
   right: -20px;
 }
 
-@media only screen and (max-width: 670px) {
+@media (max-width: 900px) {
   .breadcrumbsWrapper {
-    top: 170px;
+    top: 144px;
   }
-  .breadcrumbs {
+}
+
+@media only screen and (max-width: 670px) {
+  /* .breadcrumbsWrapper {
+    top: 170px;
+  } */
+  /* .breadcrumbs {
     gap: 20px;
   }
   .breadcrumbs__itemHome {
@@ -94,5 +100,5 @@
   }
   .breadcrumbs__link::after {
     right: -12px;
-  }
+  } */
 }

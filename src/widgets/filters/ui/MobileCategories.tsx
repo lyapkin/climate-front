@@ -1,19 +1,11 @@
 import { HTMLAttributes } from "react";
 import s from "./styles.module.css";
-import { CategoryGroup } from "@/src/entities/category";
-import CategoryGroupFilter from "./CategoryGroupFilter";
-import CategoryFilter from "./CategoryFilter";
 import cn from "classnames";
 
-const MobileCategories = ({
-  className,
-  groups,
-  groupSlug,
-  categorySlug,
-}: MobileCategoriesProps) => {
+const MobileCategories = ({ className }: MobileCategoriesProps) => {
   return (
     <div className={cn(className, s.mobileCategories)}>
-      {!groupSlug && (
+      {/* {!groupSlug && (
         <CategoryGroupFilter
           groupSlug={groupSlug}
           groups={groups}
@@ -29,13 +21,13 @@ const MobileCategories = ({
           categorySlug={categorySlug}
           prefix={`/catalog/${groupSlug}/`}
         />
-      )}
+      )} */}
     </div>
   );
 };
 
 interface MobileCategoriesProps extends HTMLAttributes<HTMLElement> {
-  groups: CategoryGroup[];
+  // groups: CategoryGroup[];
   groupSlug?: string;
   categorySlug?: string;
 }

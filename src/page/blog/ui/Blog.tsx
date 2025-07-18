@@ -1,4 +1,3 @@
-import { Contact } from "@/src/widgets";
 import s from "./styles.module.css";
 import cn from "classnames";
 import { getPageApi } from "@/src/shared/api";
@@ -9,6 +8,7 @@ import {
 } from "@/src/widgets/blog";
 import { Rubrics } from "@/src/features/rubric";
 import { Suspense } from "react";
+import { Contact } from "@/src/widgets/sections";
 
 const Blog = async () => {
   const data = await getPageApi("blog");
@@ -21,6 +21,7 @@ const Blog = async () => {
             <Rubrics
               getRubricApi={getBlogRubricsApi}
               className={s.blog__rubrics}
+              type="params"
             >
               <Suspense>
                 <BlogContent className={s.blog__content} />

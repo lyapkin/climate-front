@@ -1,3 +1,3 @@
-import { Rating, ReviewSection } from "./ui";
+import { Rating, ReviewSection, ReviewContent } from "./ui";
 
-export { Rating, ReviewSection };
+export { Rating, ReviewSection, ReviewContent };

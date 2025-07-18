@@ -8,6 +8,7 @@ import About from "./About/About";
 import { Promo } from "@/src/widgets/promo";
 import { Contact } from "@/src/widgets/sections";
 import { BlogSection } from "@/src/widgets/blog";
+import { Suspense } from "react";
 
 const Home = async () => {
   const page = await getPageApi("home");
@@ -21,7 +22,9 @@ const Home = async () => {
         <ReviewSection />
         <div className="bluebg">
           <About />
-          <Promo />
+          <Suspense>
+            <Promo />
+          </Suspense>
         </div>
       </main>
       <Contact />

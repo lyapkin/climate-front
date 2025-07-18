@@ -1,6 +1,5 @@
 import { Cart } from "@/src/page/cart";
-import Breadcrumbs from "@/src/widgets/breadcrumbs/Breadcrumbs";
-import BreadcrumbsItem from "@/src/widgets/breadcrumbs/BreadcrumbsItem";
+import { Breadcrumbs, BreadcrumbsItem } from "@/src/widgets/breadcrumbs";
 
 const CartPage = () => {
   const jsonLdBreadcrumbs = {

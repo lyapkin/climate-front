@@ -5,6 +5,8 @@ import ArrowFilledIcon from "./ArrowFilledIcon";
 import MailIcon from "./MailIcon";
 import ArrowDownIcon from "./ArrowDownIcon";
 import TrashBinIcon from "./TrashBinIcon";
+import CloseIcon from "./CloseIcon";
+import CheckIcon from "./CheckIcon";
 
 export {
   PhoneIcon,
@@ -14,4 +16,6 @@ export {
   MailIcon,
   ArrowDownIcon,
   TrashBinIcon,
+  CloseIcon,
+  CheckIcon,
 };

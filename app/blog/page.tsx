@@ -1,9 +1,8 @@
 import { getPageApi } from "@/src/shared/api";
 import { generateMetadataUtil } from "@/src/app/utils";
-import Breadcrumbs from "@/src/widgets/breadcrumbs/Breadcrumbs";
-import BreadcrumbsItem from "@/src/widgets/breadcrumbs/BreadcrumbsItem";
 import { Metadata, ResolvingMetadata } from "next";
 import { Blog } from "@/src/page/blog";
+import { Breadcrumbs, BreadcrumbsItem } from "@/src/widgets/breadcrumbs";
 
 const BlogPage = async () => {
   const jsonLdBreadcrumbs = {

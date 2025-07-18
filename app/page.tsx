@@ -2,7 +2,7 @@ import { generateMetadataUtil } from "@/src/app/utils";
 import { Home } from "@/src/page/home";
 
 import { getPageApi } from "@/src/shared/api";
-import Breadcrumbs from "@/src/widgets/breadcrumbs/Breadcrumbs";
+import { Breadcrumbs } from "@/src/widgets/breadcrumbs";
 import { Metadata, ResolvingMetadata } from "next";
 
 export default function HomePage() {

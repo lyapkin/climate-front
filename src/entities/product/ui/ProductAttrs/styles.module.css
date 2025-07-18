@@ -20,7 +20,7 @@
   flex-basis: 100%;
 }
 
-.attrs__value {
+.attrs__values {
   font-weight: 500;
   font-size: 20px;
   letter-spacing: -0.04em;
@@ -28,3 +28,9 @@
   white-space: nowrap;
   flex-grow: 1;
 }
+.attrs__values sup {
+  font-size: 0.5em;
+}
+/* .attrs__valueItem:not(:last-of-type)::after {
+  content: "; ";
+} */

@@ -7,10 +7,11 @@ import {
   useState,
 } from "react";
 import s from "./styles.module.css";
-import useCloseByClickOutside from "@/src/shared/hooks/useCloseByClickOutside";
-import CloseIcon from "@/src/shared/ui/icons/CloseIcon";
+
 import FiltersToggle from "./FiltersToggle";
 import cn from "classnames";
+import { useCloseByClickOutside } from "@/src/shared/utils/client";
+import { CloseIcon } from "@/src/shared/icons";
 
 const FiltersWrapperContext = createContext(
   {} as { open: boolean; close: () => void }

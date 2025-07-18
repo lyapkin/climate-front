@@ -11,16 +11,16 @@ const nextConfig: NextConfig = {
         port: "8000",
         pathname: "/media/**",
       },
-      // {
-      //   protocol: "http",
-      //   hostname: "stroy-technology.ru",
-      //   pathname: "/media/**",
-      // },
-      // {
-      //   protocol: "https",
-      //   hostname: "stroy-technology.ru",
-      //   pathname: "/media/**",
-      // },
+      {
+        protocol: "http",
+        hostname: "klimov-climat.ru",
+        pathname: "/media/**",
+      },
+      {
+        protocol: "https",
+        hostname: "klimov-climat.ru",
+        pathname: "/media/**",
+      },
     ],
   },
   typescript: {

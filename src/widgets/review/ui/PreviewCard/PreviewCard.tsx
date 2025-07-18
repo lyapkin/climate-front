@@ -7,7 +7,11 @@ const PreviewCard = ({ review }: PreviewCardProps) => {
   return (
     <article className={s.card}>
       <time dateTime={review.date} className={s.card__date}>
-        {review.date}
+        {new Intl.DateTimeFormat("ru-RU", {
+          year: "numeric",
+          month: "long",
+          day: "numeric",
+        }).format(new Date(review.date))}
       </time>
       <Stars rate={review.rate} className={s.card__rating} />
       <div className={s.card__img}>

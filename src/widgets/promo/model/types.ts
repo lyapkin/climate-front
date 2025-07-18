@@ -2,6 +2,6 @@ export type Promo = {
   id: number;
   name: string;
   date: string;
-  subtitle: string;
+  text: string;
   img: string;
 };

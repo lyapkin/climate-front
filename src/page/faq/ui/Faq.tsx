@@ -2,10 +2,11 @@ import s from "./styles.module.css";
 import Questions from "./Questions";
 import { Suspense } from "react";
 import QuestionsListSkeleton from "./QuestionsListSkeleton";
-// import { getFAQCategoriesApi } from "../api";
+import { getFAQCategoriesApi } from "../api";
 import cn from "classnames";
 import { getPageApi } from "@/src/shared/api";
-import { Contact } from "@/src/widgets";
+import { Contact } from "@/src/widgets/sections";
+import { Rubrics } from "@/src/features/rubric";
 
 const Faq = async () => {
   const page = await getPageApi("faq");
@@ -15,14 +16,14 @@ const Faq = async () => {
         <div className="container">
           <main className={s.faq}>
             <h1 className={cn(s.faq__title, "page-title")}>{page.title}</h1>
-            {/* <FilterBy
-              getFilterApi={getFAQCategoriesApi}
+            <Rubrics
+              getRubricApi={getFAQCategoriesApi}
               className={s.faq__filters}
-            > */}
-            <Suspense fallback={<QuestionsListSkeleton />}>
-              <Questions />
-            </Suspense>
-            {/* </FilterBy> */}
+            >
+              <Suspense fallback={<QuestionsListSkeleton />}>
+                <Questions />
+              </Suspense>
+            </Rubrics>
           </main>
         </div>
       </div>

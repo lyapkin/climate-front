@@ -88,6 +88,11 @@
   grid-column: 1 / 2;
   grid-row: 2 / 4;
   z-index: -1;
+  box-shadow: -3.64px 5.82px 15.27px 0px rgba(166, 166, 166, 0.1),
+    -15.27px 22.55px 27.64px 0px rgba(166, 166, 166, 0.09),
+    -34.91px 51.64px 37.09px 0px rgba(166, 166, 166, 0.05),
+    -61.82px 91.64px 44.36px 0px rgba(166, 166, 166, 0.01),
+    -96.73px 143.27px 48px 0px rgba(166, 166, 166, 0);
 }
 .hero__sliderButtons,
 .hero__ctaButton {
@@ -105,6 +110,7 @@
   justify-content: center;
   align-items: center;
   gap: 12px;
+  text-transform: uppercase;
 }
 
 .sliderButtons__back {
@@ -131,6 +137,11 @@
   background-color: #fff;
   border-top-left-radius: 8px;
   border-top-right-radius: 8px;
+  box-shadow: -5px 8px 21px 0px rgba(166, 166, 166, 0.1),
+    -21px 31px 38px 0px rgba(166, 166, 166, 0.09),
+    -48px 71px 51px 0px rgba(166, 166, 166, 0.05),
+    -85px 126px 61px 0px rgba(166, 166, 166, 0.01),
+    -133px 197px 66px 0px rgba(166, 166, 166, 0);
 }
 .hero__bulletsItem p {
   padding: 32px 20px 0 20px;
@@ -157,6 +168,152 @@
   position: absolute;
   bottom: 100%;
   right: 0;
+}
+
+@media (max-width: 1420px) {
+  .hero {
+    display: grid;
+    grid-template-columns: 440px auto auto;
+    grid-template-rows: repeat(3, auto) 1fr;
+    grid-template-areas:
+      "text text text"
+      "cta . ."
+      "sliderButtons . ."
+      "bullets bullets bullets";
+    row-gap: 24px;
+    position: relative;
+    z-index: 1;
+  }
+  .hero__bulletsItem {
+    border: 1px solid rgba(246, 246, 246, 1);
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+  }
+  .hero__slider {
+    grid-column: 2 / -1;
+    grid-row: 1 / -2;
+    position: relative;
+    left: 0;
+  }
+  .heroSection {
+    background-image: url("/images/home/hero/bg.png"),
+      linear-gradient(transparent 80%, #fff);
+  }
+}
+
+@media (max-width: 900px) {
+  .hero {
+    grid-template-columns: 440px auto auto;
+    grid-template-rows: repeat(4, auto) 1fr;
+    grid-template-areas:
+      "text text text"
+      "slider slider slider"
+      "cta . ."
+      "sliderButtons . ."
+      "bullets bullets bullets";
+  }
+  .hero::after {
+    grid-row: 3/5;
+  }
+  .hero__slider {
+    grid-area: slider;
+    position: relative;
+    height: 240px;
+    top: 64px;
+  }
+  .hero__text {
+    height: auto;
+    gap: 24px;
+  }
+  .hero__title {
+    font-size: 20px;
+    line-height: 140%;
+    width: 556px;
+  }
+  .hero__subtitle {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 140%;
+    letter-spacing: -0.04em;
+    color: var(--c60);
+  }
+  .hero__slider img {
+    object-position: bottom;
+  }
+  .hero__bulletsItem p {
+    padding-bottom: 12px;
+    font-size: 12px;
+    line-height: 140%;
+  }
+}
+
+@media (max-width: 740px) {
+  .hero__bullets {
+    gap: 0;
+  }
+  .hero__bulletsItem p {
+    padding: 8px 10px;
+    font-size: 12px;
+    line-height: 140%;
+  }
+  .hero__bulletsItem > div {
+    height: 96px;
+  }
+  .hero__rating {
+    position: relative;
+    bottom: 0;
+    grid-column: 1 /2;
+    grid-row: 2/3;
+  }
+}
+
+@media (max-width: 620px) {
+  .hero {
+    grid-template-columns: auto;
+    grid-template-rows: repeat(4, auto) 1fr;
+    grid-template-areas:
+      "text"
+      "slider"
+      "sliderButtons"
+      "cta"
+      "bullets";
+    row-gap: 16px;
+  }
+  .hero__title {
+    width: 100%;
+  }
+  .hero::after {
+    grid-column: 1 / -1;
+  }
+  .hero__sliderButtons {
+    padding-bottom: 0;
+    padding-top: 20px;
+    height: 64px;
+    box-sizing: border-box;
+    font-size: 8px;
+  }
+  .hero__cta {
+    padding-bottom: 20px;
+    padding-top: 0;
+  }
+  .hero__cta,
+  .hero__sliderButtons {
+    padding-left: 16px;
+    padding-right: 16px;
+    width: 100%;
+  }
+  button.hero__ctaButton {
+    width: 100%;
+    font-size: 10px;
+    height: 56px;
+  }
+  .hero__bulletsItem p {
+    font-size: 8px;
+    padding: 8px 4px;
+  }
+  .hero__bulletsItem div {
+    height: 56px;
+  }
 }
 
 /* price calculation */
@@ -273,14 +430,19 @@
 
 .priceCalculation__info {
   background-color: var(--main-color-light);
-  width: 30%;
+  min-width: 388px;
+  max-width: 388px;
   padding: 32px 40px;
   color: #fff;
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-areas:
+    "director"
+    "text"
+    "img";
   gap: 24px;
 }
 .info__director {
+  grid-area: director;
   display: grid;
   grid-template-columns: 100px auto;
   grid-template-rows: 50px 50px;
@@ -289,6 +451,9 @@
     "photo position";
   column-gap: 12px;
   align-items: center;
+}
+.info__text {
+  grid-area: text;
 }
 .info__photo {
   grid-area: photo;
@@ -316,9 +481,60 @@
   letter-spacing: -0.04em;
 }
 .info__img {
+  grid-area: img;
   position: relative;
   width: 100%;
   aspect-ratio: 1 / 1;
+  max-width: 256px;
+  justify-self: center;
+}
+
+@media (max-width: 1340px) {
+  .priceCalculation__content {
+    flex-direction: column;
+  }
+  .priceCalculation__quiz {
+    padding: 32px 40px;
+  }
+  .priceCalculation__info {
+    min-width: initial;
+    max-width: initial;
+    grid-template-areas:
+      "director img"
+      "text img";
+    grid-template-columns: 1fr 256px;
+    grid-template-rows: auto 1fr;
+  }
+}
+@media (max-width: 900px) {
+  .quiz__optionsList {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .quiz__buttons::after {
+    content: none;
+  }
+}
+@media (max-width: 760px) {
+  .priceCalculation__info {
+    grid-template-areas:
+      "director"
+      "text"
+      "img";
+    grid-template-columns: 1fr;
+    grid-template-rows: initial;
+  }
+}
+@media (max-width: 560px) {
+  .priceCalculation__content {
+    transform: scaleX(1.11);
+  }
+  .priceCalculation__content > * > * {
+    transform: scaleX(0.89);
+  }
+  .priceCalculation__quiz,
+  .priceCalculation__info {
+    padding: 32px 0;
+  }
 }
 
 /* catalog */
@@ -342,6 +558,8 @@
   align-items: center;
   gap: 16px;
   justify-self: end;
+
+  display: none;
 }
 .catalogSection__catalog {
   grid-area: catalog;
@@ -356,6 +574,8 @@
 .catalogSection__dots {
   grid-area: dots;
   width: 100%;
+
+  display: none;
 }
 
 /* logos */
@@ -391,7 +611,7 @@
 .aboutSection > div::before {
   content: "";
   position: absolute;
-  top: 0;
+  top: -1px;
   background-color: #fff;
   left: 0;
   right: 0;

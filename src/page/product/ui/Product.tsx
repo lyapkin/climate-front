@@ -1,6 +1,6 @@
 import { SearchBar } from "@/src/features/search";
 import { Button } from "@/src/shared/ui";
-import { Contact } from "@/src/widgets";
+import { Contact } from "@/src/widgets/sections";
 import s from "./styles.module.css";
 import Bullets from "./Bullets";
 import ProductContent from "./ProductContent";

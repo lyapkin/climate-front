@@ -32,6 +32,7 @@
   flex-direction: column;
   gap: 8px;
   align-self: start;
+  width: 100%;
 }
 
 /* question item */

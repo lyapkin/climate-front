@@ -1,6 +1,6 @@
 "use client";
 import { ChangeEvent, useState } from "react";
-import { ServicePart } from "../model";
+import { ServiceOption } from "../model";
 import s from "./styles.module.css";
 
 const PartsList = ({ data }: PartsListProps) => {
@@ -42,7 +42,7 @@ const PartsList = ({ data }: PartsListProps) => {
 };
 
 interface PartsListProps {
-  data: ServicePart[];
+  data: ServiceOption[];
 }
 
 export default PartsList;

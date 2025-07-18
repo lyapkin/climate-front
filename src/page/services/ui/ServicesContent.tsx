@@ -3,7 +3,7 @@ import { useState } from "react";
 import { Service } from "../model";
 import ServiceItem from "./ServiceItem";
 import s from "./styles.module.css";
-import PartsList from "./PartsList";
+import OptionsList from "./OptionsList";
 import Image from "next/image";
 
 const ServicesContent = ({ data }: ServicesContentProps) => {
@@ -39,9 +39,9 @@ const ServicesContent = ({ data }: ServicesContentProps) => {
           }}
         />
       </div>
-      <PartsList
+      <OptionsList
         key={data[currentService].id}
-        data={data[currentService].parts}
+        data={data[currentService].options}
       />
     </div>
   );

@@ -1,11 +1,13 @@
 import { CategoryDetail } from "@/src/entities/category";
 import { getCategoriesApi } from "@/src/entities/category/api";
-import { FilterLink, FilterParams } from "@/src/widgets";
+import { FilterLink, FilterParams } from "@/src/widgets/filters";
 import { Clear, FilterRange } from "@/src/widgets/filters";
 import { Suspense } from "react";
+import { getFiltersApi } from "../api";
 
 const Filters = async ({ category }: FiltersProps) => {
   const categories = await getCategoriesApi();
+  const filters = await getFiltersApi(category?.id);
 
   return (
     <>
@@ -27,6 +29,18 @@ const Filters = async ({ category }: FiltersProps) => {
           prefix="/catalog/"
         />
       )}
+      {filters.attrs.map((item) => {
+        return (
+          <Suspense key={item.id}>
+            <FilterParams
+              title={item.name}
+              data={item.values}
+              type={"attrs"}
+              multiple
+            />
+          </Suspense>
+        );
+      })}
       <Suspense>
         <FilterParams
           title="Наличие"
@@ -41,8 +55,9 @@ const Filters = async ({ category }: FiltersProps) => {
         <FilterRange
           title="Стоимость"
           type="price"
-          minRange={1}
-          maxRange={500}
+          minRange={filters.price.min || 1}
+          maxRange={filters.price.max || 1000}
+          disabled={filters.price.min === null || filters.price.max === null}
         />
       </Suspense>
       <Clear />

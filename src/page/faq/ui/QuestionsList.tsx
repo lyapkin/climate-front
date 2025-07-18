@@ -2,32 +2,23 @@
 import s from "./styles.module.css";
 import QuestionItem from "./QuestionItem";
 import { Faq } from "../types";
+import { useRubrics } from "@/src/features/rubric";
 
 const QuestionsList = ({ faqs }: QuestionsListProps) => {
-  // const { currentCategory } = useCategories();
+  const { currentRubric } = useRubrics();
 
-  // const result =
-  //   currentCategory === null
-  //     ? faqs
-  //     : faqs.filter((item) => item.categories.includes(currentCategory));
+  const result =
+    currentRubric === null
+      ? faqs
+      : faqs.filter((item) => item.rubrics.includes(currentRubric));
 
-  // const limit = Math.ceil(result.length / 2);
+  const limit = Math.ceil(result.length / 2);
 
-  // const content1 = result.slice(0, limit).map((item) => {
-  //   return <QuestionItem key={item.id} faq={item} />;
-  // });
-
-  // const content2 = result.slice(limit).map((item) => {
-  //   return <QuestionItem key={item.id} faq={item} />;
-  // });
-
-  const limit = Math.ceil(faqs.length / 2);
-
-  const content1 = faqs.slice(0, limit).map((item) => {
+  const content1 = result.slice(0, limit).map((item) => {
     return <QuestionItem key={item.id} faq={item} />;
   });
 
-  const content2 = faqs.slice(limit).map((item) => {
+  const content2 = result.slice(limit).map((item) => {
     return <QuestionItem key={item.id} faq={item} />;
   });
   return (

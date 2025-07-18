@@ -7,8 +7,15 @@ import { Expender } from "@/src/shared/components";
 import { ArrowDownIcon } from "@/src/shared/icons";
 import { useChangeSearchParams } from "@/src/shared/utils/client";
 import { useRangeState } from "./useRangeState";
+import cn from "classnames";
 
-const FilterRange = ({ title, type, minRange, maxRange }: FilterRangeProps) => {
+const FilterRange = ({
+  title,
+  type,
+  minRange,
+  maxRange,
+  disabled,
+}: FilterRangeProps) => {
   const searchParams = useSearchParams();
 
   const [rangeRepr, setRangeRepr] = useRangeState(type, minRange, maxRange);
@@ -76,10 +83,10 @@ const FilterRange = ({ title, type, minRange, maxRange }: FilterRangeProps) => {
     <Expender
       header={<span className={fs.filter__head}>{title}</span>}
       indicator={<ArrowDownIcon style={{ color: "#7b8990" }} />}
-      isOpenDefault={true}
+      isOpenDefault={!disabled}
       className={fs.filter}
     >
-      <div className={s.range}>
+      <div className={cn(s.range, { [s.range_disabled]: disabled })}>
         <div className={s.range__input}>
           <input
             type="number"
@@ -87,6 +94,7 @@ const FilterRange = ({ title, type, minRange, maxRange }: FilterRangeProps) => {
             value={rangeRepr.min}
             onChange={handleRangeChange}
             onBlur={applyFilter}
+            disabled={disabled}
           />
           <input
             type="number"
@@ -94,6 +102,7 @@ const FilterRange = ({ title, type, minRange, maxRange }: FilterRangeProps) => {
             value={rangeRepr.max}
             onChange={handleRangeChange}
             onBlur={applyFilter}
+            disabled={disabled}
           />
         </div>
         <div className={s.range__slider}>
@@ -112,6 +121,7 @@ const FilterRange = ({ title, type, minRange, maxRange }: FilterRangeProps) => {
               onChange={handleRangeChange}
               onMouseUp={applyFilter}
               onTouchEnd={applyFilter}
+              disabled={disabled}
             />
             <input
               type="range"
@@ -123,6 +133,7 @@ const FilterRange = ({ title, type, minRange, maxRange }: FilterRangeProps) => {
               onChange={handleRangeChange}
               onMouseUp={applyFilter}
               onTouchEnd={applyFilter}
+              disabled={disabled}
             />
           </div>
         </div>
@@ -136,6 +147,7 @@ interface FilterRangeProps {
   type: string;
   minRange: number;
   maxRange: number;
+  disabled: boolean;
 }
 
 export default FilterRange;

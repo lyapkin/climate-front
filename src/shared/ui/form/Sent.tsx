@@ -1,4 +1,4 @@
-import CheckIcon from "../icons/CheckIcon";
+import { CheckIcon } from "@/src/shared/icons";
 import s from "./styles.module.css";
 
 const Sent = () => {

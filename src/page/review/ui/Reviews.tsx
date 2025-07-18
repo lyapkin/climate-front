@@ -1,8 +1,8 @@
-import { Contact, Rating } from "@/src/widgets";
 import s from "./styles.module.css";
 import cn from "classnames";
-import { ReviewContent } from "@/src/widgets/review/ui";
+import { Rating, ReviewContent } from "@/src/widgets/review";
 import { getPageApi } from "@/src/shared/api";
+import { Contact } from "@/src/widgets/sections";
 
 const Reviews = async () => {
   const data = await getPageApi("reviews");

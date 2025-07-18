@@ -2,16 +2,12 @@
 import {
   createContext,
   PropsWithChildren,
-  // useCallback,
   useContext,
   useEffect,
   useState,
 } from "react";
 import type { CartContext } from "./types";
-// import { isNumber } from "@/src/shared/utils";
-// import { productId } from "@/src/shared/types";
 import { ProductBase } from "@/src/entities/product";
-// import { getProductsExist } from "./api";
 import { useInit } from "./useInit";
 
 const CartContext = createContext({} as CartContext);

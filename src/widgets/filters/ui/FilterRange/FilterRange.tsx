@@ -22,13 +22,6 @@ const FilterRange = ({
 
   const changeSearchParams = useChangeSearchParams();
 
-  const slideLeftPosition = `${
-    ((Number(rangeRepr.min) || 1) / maxRange) * 100
-  }%`;
-  const slideRightPosition = `${
-    100 - ((Number(rangeRepr.max) || maxRange) / maxRange) * 100
-  }%`;
-
   const handleRangeChange = (e: ChangeEvent<HTMLInputElement>) => {
     const val = parseInt(e.target.value);
     if (val < 0 || val > maxRange) return;
@@ -79,6 +72,11 @@ const FilterRange = ({
     setRangeRepr({ min, max });
   };
 
+  const sliderSelected = getSliderSelected(rangeRepr, {
+    min: minRange,
+    max: maxRange,
+  });
+
   return (
     <Expender
       header={<span className={fs.filter__head}>{title}</span>}
@@ -106,10 +104,7 @@ const FilterRange = ({
           />
         </div>
         <div className={s.range__slider}>
-          <span
-            className={s.range__slider_selected}
-            style={{ left: slideLeftPosition, right: slideRightPosition }}
-          ></span>
+          {sliderSelected}
           <div className={s.range__sliderInput}>
             <input
               type="range"
@@ -149,5 +144,27 @@ interface FilterRangeProps {
   maxRange: number;
   disabled: boolean;
 }
+
+const getSliderSelected = (
+  rangeRepr: { min: string; max: string },
+  range: { min: number; max: number }
+) => {
+  const selectedLeftPosition = `${
+    ((Number(rangeRepr.min) - range.min || 1) / (range.max - range.min)) * 100
+  }%`;
+  const selectedRightPosition = `${
+    100 -
+    ((Number(rangeRepr.max) - range.min || range.max - range.min) /
+      (range.max - range.min)) *
+      100
+  }%`;
+
+  return (
+    <span
+      className={s.range__slider_selected}
+      style={{ left: selectedLeftPosition, right: selectedRightPosition }}
+    />
+  );
+};
 
 export default FilterRange;

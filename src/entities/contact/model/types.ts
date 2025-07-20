@@ -12,7 +12,6 @@ export type Address = {
   weekdays: string;
   weekends: string;
   phone?: string;
-  coordinates?: [number, number];
 };
 
 export type Contact = {

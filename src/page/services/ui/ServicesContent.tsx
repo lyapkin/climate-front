@@ -26,7 +26,7 @@ const ServicesContent = ({ data }: ServicesContentProps) => {
       <div className={s.content__card}>
         <div className={s.card__img}>
           <Image
-            src={"/images/home/calculation/quiz/1.jpg"}
+            src={data[currentService].img}
             alt={data[currentService].name}
             fill
             style={{ objectFit: "cover" }}
@@ -35,7 +35,7 @@ const ServicesContent = ({ data }: ServicesContentProps) => {
         <div
           className={s.card__text}
           dangerouslySetInnerHTML={{
-            __html: `<p>Lorem Ipsum - это текст-"рыба", часто используемый в печати и вэб-дизайне. Lorem Ipsum является стандартной "рыбой" для текстов на латинице с начала XVI века.</p><p>В то время некий безымянный печатник создал большую коллекцию размеров</p>`,
+            __html: data[currentService].description,
           }}
         />
       </div>

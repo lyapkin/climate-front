@@ -12,10 +12,7 @@ const CategoryCard = ({ category }: CategoryCardProps) => {
       <List
         data={category.children}
         render={(item) => (
-          <Link
-            href={`/catalog/${category.slug}/${item.slug}/`}
-            className={s.card__itemLink}
-          >
+          <Link href={`/catalog/${item.slug}/`} className={s.card__itemLink}>
             {item.name}
           </Link>
         )}

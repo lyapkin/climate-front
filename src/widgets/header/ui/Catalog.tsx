@@ -10,7 +10,7 @@ const Catalog = async ({ className }: HTMLAttributes<HTMLElement>) => {
 
   return (
     <List
-      data={data}
+      data={data.slice(0, 5)}
       render={(item) => (
         <Link href={`/catalog/${item.slug}/`}>{item.name}</Link>
       )}

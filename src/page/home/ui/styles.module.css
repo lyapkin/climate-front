@@ -536,6 +536,11 @@
     padding: 32px 0;
   }
 }
+@media (max-width: 460px) {
+  button.quiz__button {
+    font-size: 12px;
+  }
+}
 
 /* catalog */
 .catalogSection {
@@ -769,4 +774,66 @@
   line-height: 24px;
   letter-spacing: -0.04em;
   color: #fff;
+}
+
+@media (max-width: 1060px) {
+  /* .about {
+    grid-template-areas:
+      "title"
+      "text"
+      "digits";
+  } */
+  .about__digits {
+    width: 296px;
+  }
+  .digits__digit {
+    font-size: 48px;
+  }
+  .digits__sub {
+    font-size: 14px;
+  }
+  .digits__text {
+    font-size: 12px;
+  }
+  .digits__bullet::before {
+    transform: translate(-50%, 130%);
+  }
+}
+@media (max-width: 900px) {
+  .about__title {
+    font-size: 20px;
+    line-height: 140%;
+  }
+  .about__title span {
+    font-size: 14px;
+  }
+  .about__text {
+    font-size: 16px;
+    line-height: 140%;
+  }
+}
+@media (max-width: 760px) {
+  .aboutSection > div::before {
+    transform: scaleX(1.2);
+  }
+  .about {
+    grid-template-areas:
+      "title"
+      "text"
+      "digits";
+  }
+  .about__digits {
+    width: 100%;
+  }
+  .digits__bullet {
+    padding-left: 32px;
+  }
+  .digits__bullet::before {
+    transform: translate(50%, 200%);
+    width: 12px;
+    outline-width: 4px;
+  }
+  .digits__bullet:not(:last-child)::after {
+    transform: translate(10px, 32px);
+  }
 }

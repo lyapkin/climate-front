@@ -5,11 +5,11 @@ import { MailIcon } from "../../icons";
 
 const Email = ({ email, className }: EmailProps) => {
   return (
-    <Link href={`mailto:${email}`} className={cn(s.tel, className)}>
-      <span className={s.tel__icon}>
+    <Link href={`mailto:${email}`} className={cn(s.email, className)}>
+      <span className={s.email__icon}>
         <MailIcon />
       </span>
-      <span className={s.tel__text}>{email}</span>
+      <span className={s.email__text}>{email}</span>
     </Link>
   );
 };

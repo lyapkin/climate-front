@@ -48,13 +48,13 @@ const FiltersWrapper = ({
             [s.filtersContainer_closed]: !open,
           })}
         >
+          <div className={s.filtersMobile__title}>
+            Фильтры
+            <button className={s.filtersMobile__close} onClick={handleClose}>
+              <CloseIcon />
+            </button>
+          </div>
           <div className={s.filtersContent} ref={ref}>
-            <div className={s.filtersMobile__title}>
-              Фильтры
-              <button className={s.filtersMobile__close} onClick={handleClose}>
-                <CloseIcon />
-              </button>
-            </div>
             {children}
           </div>
         </div>

@@ -131,45 +131,7 @@
   }
 }
 
-@media only screen and (max-width: 1240px) {
-  .card {
-    grid-template-areas:
-      "image image"
-      "title title"
-      "attrs attrs"
-      "price action";
-  }
-  .card__price {
-    padding: 0 0 0 24px;
-    flex-direction: column;
-  }
-
-  .card__action {
-    padding-right: 0 24px 0 0;
-  }
-}
-
-@media only screen and (max-width: 1120px) {
-  .card {
-    grid-template-areas:
-      "image image"
-      "title title"
-      "attrs attrs"
-      "price price"
-      "action action";
-  }
-  .card__price {
-    padding: 0 24px;
-    flex-direction: row;
-  }
-
-  .card__action {
-    padding: 0 24px;
-    justify-self: center;
-  }
-}
-
-@media only screen and (max-width: 700px) {
+@media only screen and (max-width: 800px) {
   .card__title,
   .card__attrs,
   .card__price,
@@ -177,11 +139,10 @@
     padding-left: 8px;
     padding-right: 8px;
   }
-}
-
-@media only screen and (max-width: 560px) {
   .card {
     row-gap: 8px;
+    padding-bottom: 0;
+    border-width: 0.5px;
   }
   .card__title {
     font-size: 14px;
@@ -195,16 +156,29 @@
   .price__title {
     font-size: 12px;
   }
+  .price__value {
+    font-size: 14px;
+  }
 
   .card__action {
-    min-width: 136px;
     width: 100%;
     box-sizing: border-box;
+    padding: 0;
+    height: 48px;
   }
-}
-
-@media only screen and (max-width: 440px) {
-  .price__value {
+  .card__action button {
     font-size: 12px;
+    border-radius: var(--radius1);
+    padding: 0 16px;
+  }
+  .card__discount {
+    top: 0;
+    padding: 4px 8px;
+    font-size: 8px;
+  }
+
+  .card__stock {
+    padding: 4px 8px;
+    font-size: 8px;
   }
 }

@@ -1,6 +1,7 @@
 .consultation {
+  position: relative;
   grid-column: 1 / -1;
-  background-color: #fbfbfb;
+  background-color: #fff;
   padding: 40px;
   display: flex;
   flex-direction: column;
@@ -9,13 +10,14 @@
   background-repeat: no-repeat;
   background-position: right bottom;
   background-size: 40%;
-  border-radius: var(--radius1);
+  border-radius: var(--radius2);
   box-shadow: -5px 8px 21px 0px rgba(166, 166, 166, 0.1),
     -21px 31px 38px 0px rgba(166, 166, 166, 0.09),
     -48px 71px 51px 0px rgba(166, 166, 166, 0.05),
     -85px 126px 61px 0px rgba(166, 166, 166, 0.01),
     -133px 197px 66px 0px rgba(166, 166, 166, 0);
   position: relative;
+  border: 1px solid #ededed;
 }
 .consultation__title {
   font-weight: 600;
@@ -38,4 +40,33 @@
 .consultation__button {
   width: 268px;
   height: 64px;
+}
+@media (max-width: 920px) {
+  .consultation__title {
+    font-size: 16px;
+    line-height: 140%;
+  }
+  .consultation__subtitle {
+    font-size: 14px;
+    line-height: 140%;
+  }
+}
+@media (max-width: 600px) {
+  .consultation {
+    background-size: 700px;
+    padding: 24px;
+    background-position: left -80px bottom;
+    align-items: center;
+    text-align: center;
+  }
+  .consultation__title {
+    width: auto;
+  }
+  .consultation__subtitle {
+    margin-bottom: 196px;
+    width: auto;
+  }
+  .consultation__button {
+    width: 100%;
+  }
 }

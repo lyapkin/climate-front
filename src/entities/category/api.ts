@@ -4,7 +4,128 @@ import { notFound, permanentRedirect } from "next/navigation";
 
 export const getCategoriesApi = async (): Promise<Category[]> => {
   const res = await backFetch("catalog/categories/");
-  return await res.json();
+  // return await res.json();
+  const categories = (await res.json()) as Category[];
+  categories.push(
+    ...[
+      {
+        id: 100,
+        name: "Кассетные кондиционеры",
+        slug: "cat1",
+        img: "/images/categories/1.png",
+        children: [
+          {
+            id: 1,
+            name: "Кассетные кондиционеры",
+            slug: "sub1",
+          },
+          {
+            id: 2,
+            name: "Кассетные кондиционеры",
+            slug: "sub2",
+          },
+          {
+            id: 3,
+            name: "Кассетные кондиционеры",
+            slug: "sub3",
+          },
+        ],
+      },
+      {
+        id: 200,
+        name: "Мобильные кондиционеры",
+        slug: "cat2",
+        img: "/images/categories/1.png",
+        children: [
+          {
+            id: 1,
+            name: "Кассетные кондиционеры",
+            slug: "sub4",
+          },
+          {
+            id: 2,
+            name: "Кассетные кондиционеры",
+            slug: "sub5",
+          },
+          {
+            id: 3,
+            name: "Кассетные кондиционеры",
+            slug: "sub6",
+          },
+        ],
+      },
+      // {
+      //   id: 300,
+      //   name: "Мульти-сплит-системы",
+      //   slug: "cat3",
+      //   img: "/images/categories/1.png",
+      //   children: [
+      //     {
+      //       id: 1,
+      //       name: "Кассетные кондиционеры",
+      //       slug: "sub7",
+      //     },
+      //     {
+      //       id: 2,
+      //       name: "Кассетные кондиционеры",
+      //       slug: "sub8",
+      //     },
+      //     {
+      //       id: 3,
+      //       name: "Кассетные кондиционеры",
+      //       slug: "sub9",
+      //     },
+      //   ],
+      // },
+      // {
+      //   id: 400,
+      //   name: "Настенные кондиционеры",
+      //   slug: "cat4",
+      //   img: "/images/categories/1.png",
+      //   children: [
+      //     {
+      //       id: 1,
+      //       name: "Кассетные кондиционеры",
+      //       slug: "sub10",
+      //     },
+      //     {
+      //       id: 2,
+      //       name: "Кассетные кондиционеры",
+      //       slug: "sub11",
+      //     },
+      //     {
+      //       id: 3,
+      //       name: "Кассетные кондиционеры",
+      //       slug: "sub12",
+      //     },
+      //   ],
+      // },
+      // {
+      //   id: 500,
+      //   name: "Кассетные кондиционеры",
+      //   slug: "cat5",
+      //   img: "/images/categories/1.png",
+      //   children: [
+      //     {
+      //       id: 1,
+      //       name: "Кассетные кондиционеры",
+      //       slug: "sub13",
+      //     },
+      //     {
+      //       id: 2,
+      //       name: "Кассетные кондиционеры",
+      //       slug: "sub14",
+      //     },
+      //     {
+      //       id: 3,
+      //       name: "Кассетные кондиционеры",
+      //       slug: "sub15",
+      //     },
+      //   ],
+      // },
+    ]
+  );
+  return categories;
   // return [
   //   {
   //     id: 1,

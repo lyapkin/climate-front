@@ -18,7 +18,7 @@ const MobileMenu = ({ className, contacts }: MobileMenuProps) => {
       e.target instanceof Element &&
       (e.target.nodeName === "A" || e.target.closest("a"))
     ) {
-      // setIsOpen(false);
+      setIsOpen(false);
     }
   };
 
@@ -44,17 +44,26 @@ const MobileMenu = ({ className, contacts }: MobileMenuProps) => {
       >
         <div className={s.mobileMenuContent} onClick={handleLinkClick}>
           <Nav className={s.mobileMenu__navList}>
+            <NavItem link={"/blog/?rubric=1"} className={s.mobileMenu__navItem}>
+              Наши работы
+            </NavItem>
+            <NavItem link={"/services/"} className={s.mobileMenu__navItem}>
+              Услуги
+            </NavItem>
+            <NavItem link={"/prices/"} className={s.mobileMenu__navItem}>
+              Цены
+            </NavItem>
+            <NavItem link={"/reviews/"} className={s.mobileMenu__navItem}>
+              Отзывы
+            </NavItem>
             <NavItem link={"/faq/"} className={s.mobileMenu__navItem}>
               FAQ
             </NavItem>
-            <NavItem link={"/about/"} className={s.mobileMenu__navItem}>
-              О компании
+            <NavItem link={"/catalog/"} className={s.mobileMenu__navItem}>
+              Каталог
             </NavItem>
-            <NavItem link={"/partners/"} className={s.mobileMenu__navItem}>
-              Партнерам
-            </NavItem>
-            <NavItem link={"/blog/"} className={s.mobileMenu__navItem}>
-              Новости
+            <NavItem link={"/calculation/"} className={s.mobileMenu__navItem}>
+              Рассчет стоимости
             </NavItem>
             <NavItem link={"/contacts/"} className={s.mobileMenu__navItem}>
               Контакты

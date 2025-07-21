@@ -34,3 +34,13 @@
 /* .attrs__valueItem:not(:last-of-type)::after {
   content: "; ";
 } */
+
+@media (max-width: 800px) {
+  .attrs__name {
+    font-size: 10px;
+  }
+
+  .attrs__values {
+    font-size: 12px;
+  }
+}

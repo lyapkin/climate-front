@@ -10,7 +10,8 @@
   align-items: center;
   justify-content: center;
 }
-.tel__icon > * {
+.tel__icon > *,
+.email__icon > * {
   width: 50%;
   height: 50%;
 }
@@ -20,6 +21,7 @@
   font-weight: inherit;
   font-size: inherit;
   color: inherit;
+  white-space: nowrap;
 }
 
 .tel,

@@ -26,24 +26,24 @@ export const getContactsApi = async (): Promise<Contact> => {
 export const getRequisitesApi = async (): Promise<Requisites> => {
   const res = await backFetch("company/requisites/1/");
   return res.json();
-  return {
-    name: "Климов Климат",
-    requisites: [
-      {
-        id: 1,
-        name: "ИНН",
-        value: "45345345345",
-      },
-      {
-        id: 2,
-        name: "БИК банка",
-        value: "64564564564",
-      },
-      {
-        id: 3,
-        name: "Банк",
-        value: 'АО "Тинькофф Банк"',
-      },
-    ],
-  };
+  // return {
+  //   name: "Климов Климат",
+  //   requisites: [
+  //     {
+  //       id: 1,
+  //       name: "ИНН",
+  //       value: "45345345345",
+  //     },
+  //     {
+  //       id: 2,
+  //       name: "БИК банка",
+  //       value: "64564564564",
+  //     },
+  //     {
+  //       id: 3,
+  //       name: "Банк",
+  //       value: 'АО "Тинькофф Банк"',
+  //     },
+  //   ],
+  // };
 };

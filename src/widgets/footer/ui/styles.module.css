@@ -1,10 +1,10 @@
 .footer {
   display: grid;
-  grid-template-columns: repeat(4, auto);
-  grid-template-rows: repeat(2, auto);
+  grid-template-columns: 280px repeat(3, auto);
+  grid-template-rows: auto 96px;
   grid-template-areas:
-    "nav catalog contacts emails"
-    "logo about social emails";
+    "catalog nav contacts emails"
+    "logo about about about";
   background-color: #dedede;
   gap: 1px;
   padding: 1px;
@@ -37,11 +37,11 @@
   grid-area: about;
 }
 
-.footer__social {
+/* .footer__social {
   grid-area: social;
   background-color: #fff;
   padding: 16px 48px;
-}
+} */
 
 .footer__nav,
 .footer__catalog,
@@ -123,14 +123,14 @@
   gap: 12px;
 }
 
-.footer__social a {
+/* .footer__social a {
   background-color: #e8f1f5;
   height: 40px;
   aspect-ratio: 1 / 1;
   display: flex;
   justify-content: center;
   align-items: center;
-}
+} */
 
 .footer__telItem {
   font-weight: 500;
@@ -195,16 +195,16 @@
 @media only screen and (max-width: 1370px) {
   .footer {
     grid-template-areas:
-      "nav catalog contacts emails"
-      "logo social contacts emails";
+      "catalog nav contacts emails"
+      "logo about about about";
   }
   .footer__logo {
     min-width: 128px;
     padding: 16px 32px;
   }
-  .footer__about {
+  /* .footer__about {
     display: none;
-  }
+  } */
   .bottom {
     flex-direction: column;
     justify-content: space-around;
@@ -221,14 +221,13 @@
   }
 }
 
-@media only screen and (max-width: 1100px) {
+@media only screen and (max-width: 1180px) {
   .footer {
     grid-template-columns: 1fr;
     grid-template-rows: repeat(5, auto);
     grid-template-areas:
       "nav"
       "catalog"
-      "social"
       "contacts"
       "emails";
     padding: 0;
@@ -244,10 +243,13 @@
   .footer__emails {
     padding: 12px 0;
   }
-  .footer__social {
+  /* .footer__social {
     padding: 16px 24px;
-  }
+  } */
   .footer__logo {
+    display: none !important;
+  }
+  .footer__about {
     display: none;
   }
   .footer__listBody {
@@ -316,9 +318,9 @@
     padding-left: 0;
     padding-right: 0;
   }
-  .footer__social {
+  /* .footer__social {
     padding: 16px 0;
-  }
+  } */
 }
 
 @media only screen and (max-width: 680px) {

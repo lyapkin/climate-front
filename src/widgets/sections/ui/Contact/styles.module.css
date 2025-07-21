@@ -35,3 +35,34 @@
   letter-spacing: -0.04em;
   color: var(--c);
 }
+
+@media (max-width: 960px) {
+  .contactSection {
+    background-image: none;
+  }
+  .contactSection > div {
+    width: 100%;
+  }
+  .contact {
+    width: 100%;
+    border: 1px solid #ededed;
+    padding: 5%;
+  }
+}
+@media (max-width: 900px) {
+  .contact__title {
+    font-size: 20px;
+    line-height: 140%;
+    width: 70%;
+    margin-bottom: 0;
+  }
+  .contact__subtitle {
+    font-size: 16px;
+    line-height: 140%;
+  }
+}
+@media (max-width: 590px) {
+  .contact__title {
+    width: auto;
+  }
+}

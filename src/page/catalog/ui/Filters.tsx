@@ -1,9 +1,12 @@
 import { CategoryDetail } from "@/src/entities/category";
 import { getCategoriesApi } from "@/src/entities/category/api";
-import { FilterLink, FilterParams } from "@/src/widgets/filters";
-import { Clear, FilterRange } from "@/src/widgets/filters";
 import { Suspense } from "react";
 import { getFiltersApi } from "../api";
+import s from "./styles.module.css";
+import FilterLink from "./filters/FilterLink";
+import FilterParams from "./filters/FilterParams";
+import { FilterRange } from "./filters/FilterRange";
+import Clear from "./filters/Clear";
 
 const Filters = async ({ category }: FiltersProps) => {
   const categories = await getCategoriesApi();
@@ -60,7 +63,7 @@ const Filters = async ({ category }: FiltersProps) => {
           disabled={filters.price.min === null || filters.price.max === null}
         />
       </Suspense>
-      <Clear />
+      <Clear className={s.filters__clear} />
     </>
   );
 };

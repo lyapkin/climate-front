@@ -9,7 +9,7 @@ import FiltersWrapper from "./filters/FiltersWrapper";
 const Catalog = ({ category }: CatalogProps) => {
   return (
     <>
-      <CatalogTitle category={category} />=
+      <CatalogTitle category={category} />
       <div className={s.catalog__list}>
         <Suspense>
           <ProductList />

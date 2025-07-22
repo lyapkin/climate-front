@@ -29,3 +29,15 @@
 .cart__sum {
   grid-area: sum;
 }
+
+@media (max-width: 1360px) {
+  .cart {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto 1fr;
+    grid-template-areas:
+      "title"
+      "list"
+      "sum"
+      "form";
+  }
+}

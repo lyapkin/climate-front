@@ -1,11 +1,12 @@
 .imgs {
   display: flex;
   gap: 16px;
-  height: 512px;
+  height: 100%;
 }
 
 .imgs__all {
-  width: 184px;
+  /* width: 184px; */
+  aspect-ratio: 184/512;
   display: flex;
   flex-direction: column;
   gap: 16px;
@@ -57,5 +58,14 @@
 @media (hover: hover) {
   .slide__button:hover {
     opacity: 1;
+  }
+}
+@media (max-width: 680px) {
+  .imgs__all {
+    display: none;
+  }
+  .imgs__current {
+    aspect-ratio: auto;
+    width: 100%;
   }
 }

@@ -40,3 +40,32 @@
   height: 64px;
   margin-top: 64px;
 }
+@media (max-width: 1360px) {
+  .cartForm {
+    gap: 96px;
+    background-position: bottom 64px left;
+  }
+  .form {
+    width: 512px;
+  }
+}
+@media (max-width: 840px) {
+  .cartForm {
+    gap: 52vw;
+    background-position: bottom 428px center;
+  }
+  .form {
+    width: auto;
+  }
+}
+@media (max-width: 660px) {
+  .cartForm {
+    padding: 24px;
+  }
+  .cartForm__title {
+    font-size: 20px;
+  }
+  .form__button {
+    margin-top: 16px;
+  }
+}

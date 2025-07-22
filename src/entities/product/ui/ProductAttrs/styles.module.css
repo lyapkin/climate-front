@@ -17,6 +17,7 @@
   color: var(--c40);
   white-space: nowrap;
   overflow: hidden;
+  text-overflow: ellipsis;
   flex-basis: 100%;
 }
 

@@ -1,6 +1,7 @@
 .price {
   display: grid;
   grid-template-rows: auto 1fr;
+  grid-template-columns: auto 1fr;
   grid-template-areas:
     "title title"
     "result full";
@@ -19,6 +20,7 @@
   font-size: 24px;
   letter-spacing: -0.04em;
   color: var(--c);
+  margin-right: 24px;
 }
 .price__full {
   grid-area: full;

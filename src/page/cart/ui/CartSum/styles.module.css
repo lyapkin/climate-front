@@ -103,9 +103,9 @@
   }
   .sum__discountValue,
   .price__full {
-    font-size: 16px;
+    font-size: 12px;
   }
   .price__result {
-    font-size: 20px;
+    font-size: 16px;
   }
 }

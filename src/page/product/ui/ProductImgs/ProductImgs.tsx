@@ -5,29 +5,67 @@ import Image from "next/image";
 import cn from "classnames";
 // import ProductPicture from "./ProductPicture";
 import { ProductDetail } from "@/src/entities/product";
-import { HTMLAttributes } from "react";
+import { HTMLAttributes, useEffect, useRef, useState } from "react";
 import SlideButton from "./SlideButton";
+import { Swiper, SwiperRef, SwiperSlide } from "swiper/react";
+import { Navigation } from "swiper/modules";
+
+import "swiper/css";
 
 const ProductImgs = ({ imgs, alt, className }: ProductImgsProps) => {
-  const imgsAll = imgs.map((item) => (
-    <div key={item.id} className={cn(s.all__img)}>
+  const swiperRef = useRef<SwiperRef>(null);
+  const [currentSlideIndex, setCurrentSlideIndex] = useState(0);
+
+  useEffect(() => {
+    if (!swiperRef.current) return;
+    swiperRef.current.swiper.slideTo(currentSlideIndex);
+  }, [currentSlideIndex]);
+
+  const imgsAll = imgs.map((item, i) => (
+    <div
+      key={item.id}
+      className={cn(s.all__img, {
+        [s.all__img_active]: currentSlideIndex === i,
+      })}
+      onClick={() => setCurrentSlideIndex(i)}
+    >
       <Image src={item.url} fill alt={alt} objectFit="contain" />
     </div>
   ));
 
+  const content = imgs.map((item) => {
+    return (
+      <SwiperSlide tag="div" key={item.id} className={s.current__img}>
+        <Image src={imgs[0].url} fill alt={alt} objectFit="contain" />
+      </SwiperSlide>
+    );
+  });
+
   return (
     <div className={cn(s.imgs, className)}>
       <div className={s.imgs__all}>{imgsAll}</div>
-      <div className={s.imgs__current}>
+      <Swiper
+        tag="div"
+        className={s.imgs__current}
+        modules={[Navigation]}
+        navigation={{
+          prevEl: ".productPicture__leftButton",
+          nextEl: ".productPicture__rightButton",
+          hideOnClick: true,
+        }}
+        onSlideChange={(swiper) => setCurrentSlideIndex(swiper.activeIndex)}
+        ref={swiperRef}
+      >
         {/* {imgs.map((item) => (
             <ProductPicture key={item.id} url={item.url} alt={alt} />
           ))} */}
-        <div className={s.current__img}>
-          <Image src={imgs[0].url} fill alt={alt} objectFit="contain" />
-        </div>
-        <SlideButton orintation="left" />
-        <SlideButton orintation="right" />
-      </div>
+        {content}
+        <SlideButton orintation="left" className="productPicture__leftButton" />
+        <SlideButton
+          orintation="right"
+          className="productPicture__rightButton"
+        />
+      </Swiper>
     </div>
   );
 };

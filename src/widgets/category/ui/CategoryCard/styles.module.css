@@ -65,3 +65,17 @@
   border: 1px solid var(--main-color);
   align-self: flex-start;
 }
+
+@media (max-width: 900px) {
+  .card {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    padding: 20px;
+    min-width: 320px;
+    height: 455px;
+  }
+  .card__title {
+    font-size: 16px;
+  }
+}

@@ -1,5 +1,5 @@
 import { SearchBar } from "@/src/features/search";
-import { Button } from "@/src/shared/ui";
+import { CustomLink } from "@/src/shared/ui";
 import { Contact } from "@/src/widgets/sections";
 import s from "./styles.module.css";
 import Bullets from "./Bullets";
@@ -13,7 +13,9 @@ const Product = async ({ product }: ProductProps) => {
         <div className="container">
           <div className={s.layout}>
             <SearchBar className={s.layout__search} />
-            <Button className={s.layout__catalog}>Каталог комплектующих</Button>
+            <CustomLink href={"/catalog/"} className={s.layout__catalog}>
+              Каталог комплектующих
+            </CustomLink>
           </div>
           <main className={s.product}>
             <ProductContent product={product} />

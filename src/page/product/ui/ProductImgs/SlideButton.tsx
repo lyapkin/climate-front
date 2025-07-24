@@ -2,9 +2,15 @@ import { ButtonHTMLAttributes } from "react";
 import s from "./styles.module.css";
 import cn from "classnames";
 
-const SlideButton = ({ orintation }: SlideButtonProps) => {
+const SlideButton = ({ orintation, className }: SlideButtonProps) => {
   return (
-    <button className={cn(s.slide__button, s[`slide__button_${orintation}`])}>
+    <button
+      className={cn(
+        s.slide__button,
+        className,
+        s[`slide__button_${orintation}`]
+      )}
+    >
       <svg
         width="10"
         height="18"

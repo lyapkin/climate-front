@@ -15,16 +15,15 @@ const Slider = ({
 }: SliderProps) => {
   const containerRef = useRef<HTMLDivElement>(null);
   const width = useWindowWidth();
-  const [itemsInSlide, setItemsInSlide] = useState<number | undefined>(
-    undefined
-  );
-  const [step, setStep] = useState<number | undefined>(undefined);
-  const [currentSlide, setCurrentSlide] = useState<number | undefined>(
-    undefined
-  );
+  const [itemsCountInClientWidth, setItemsCountInClientWidth] = useState<
+    number | undefined
+  >(undefined);
+  const [stepPixels, setStepPixels] = useState<number | undefined>(undefined);
+  const [currentStep, setCurrentStep] = useState<number | undefined>(undefined);
   const [clientWidth, setClientWidth] = useState<number | undefined>(undefined);
-
-  const [isScrollReady, setIsScrollReady] = useState(false);
+  const [slidesListWidth, setSlidesListWidth] = useState<number | undefined>(
+    undefined
+  );
 
   useEffect(() => {
     if (!containerRef.current) return;
@@ -32,87 +31,79 @@ const Slider = ({
     const firstChild = containerRef.current.firstElementChild;
     if (firstChild instanceof HTMLElement && firstChild.nextElementSibling) {
       const clientWidth = containerRef.current.clientWidth;
-      const realClientWidth =
+      const containerWidth =
         clientWidth -
         parseInt(window.getComputedStyle(containerRef.current).paddingLeft) -
         parseInt(window.getComputedStyle(containerRef.current).paddingRight);
       const gap =
         firstChild.nextElementSibling?.getBoundingClientRect().left -
         firstChild?.getBoundingClientRect().right;
-      const itemsInSlide = Math.floor(realClientWidth / firstChild.offsetWidth);
+      const itemsCountInClientWidth = Math.floor(
+        containerWidth / firstChild.offsetWidth
+      );
       const stepInPixels =
-        itemsInSlide * firstChild.offsetWidth + itemsInSlide * gap;
+        itemsCountInClientWidth * firstChild.offsetWidth +
+        itemsCountInClientWidth * gap;
 
-      setClientWidth(clientWidth);
-      setItemsInSlide(itemsInSlide);
-      setStep(stepInPixels);
-      setCurrentSlide(0);
+      setSlidesListWidth(
+        firstChild.offsetWidth * React.Children.count(children) +
+          (React.Children.count(children) - 1) * gap
+      );
+      setClientWidth(containerWidth);
+      setItemsCountInClientWidth(itemsCountInClientWidth);
+      setStepPixels(stepInPixels);
+      setCurrentStep(0);
     }
-  }, [width]);
+  }, [width, children]);
 
   useEffect(() => {
-    if (isScrollReady) {
-      if (!containerRef.current || currentSlide === undefined || !step) return;
+    if (!containerRef.current || currentStep === undefined || !stepPixels)
+      return;
 
-      containerRef.current.scroll({
-        left: currentSlide * step,
-        behavior: "smooth",
-      });
-      setIsScrollReady(false);
-    }
-  }, [isScrollReady, currentSlide, step]);
+    containerRef.current.scroll({
+      left: currentStep * stepPixels,
+      behavior: "smooth",
+    });
+  }, [currentStep, stepPixels]);
 
   const handleLeftSlide = () => {
-    setCurrentSlide((prev) => prev && prev - 1);
-    setIsScrollReady(true);
+    setCurrentStep((prev) => prev && prev - 1);
   };
 
   const handleRightSlide = () => {
-    setCurrentSlide((prev) =>
+    setCurrentStep((prev) =>
       prev !== undefined &&
-      itemsInSlide &&
-      prev < Math.ceil(React.Children.count(children) / itemsInSlide)
+      itemsCountInClientWidth &&
+      prev < Math.ceil(React.Children.count(children) / itemsCountInClientWidth)
         ? prev + 1
         : prev
     );
-    setIsScrollReady(true);
   };
 
   const handleScroll = () => {
     if (
       !containerRef.current ||
-      currentSlide === undefined ||
-      !step ||
-      !itemsInSlide ||
+      currentStep === undefined ||
+      !stepPixels ||
+      !itemsCountInClientWidth ||
       !clientWidth
     )
       return;
-    console.log(containerRef.current.scrollLeft, currentSlide * step);
-    if (containerRef.current.scrollLeft >= (currentSlide + 1) * step) {
-      setCurrentSlide((prev) =>
-        prev !== undefined &&
-        itemsInSlide &&
-        prev < Math.ceil(React.Children.count(children) / itemsInSlide)
-          ? prev + 1
-          : prev
-      );
-    }
-    if (containerRef.current.scrollLeft <= currentSlide * step) {
-      setCurrentSlide((prev) => prev && prev - 1);
-    }
-    // if rigth side reach the end then currentSlide must be last value
 
-    if (
-      containerRef.current.scrollLeft + clientWidth >=
-      containerRef.current.scrollWidth - 5
+    const newStep = Math.floor(containerRef.current.scrollLeft / stepPixels);
+    if (newStep > currentStep) {
+      setCurrentStep(newStep);
+    } else if (newStep < currentStep - 1) {
+      setCurrentStep(newStep + 1);
+    } else if (containerRef.current.scrollLeft === 0) {
+      setCurrentStep(0);
+    } else if (
+      containerRef.current.scrollLeft + clientWidth ===
+      slidesListWidth
     ) {
-      setCurrentSlide(
-        Math.ceil(React.Children.count(children) / itemsInSlide) - 1
+      setCurrentStep(
+        Math.ceil(React.Children.count(children) / itemsCountInClientWidth) - 1
       );
-    }
-    // if left side reach the begining then currentSlide must be 0
-    if (containerRef.current.scrollLeft === 0) {
-      setCurrentSlide(0);
     }
   };
 
@@ -129,25 +120,32 @@ const Slider = ({
         <ArrowButton
           direction="left"
           onClick={handleLeftSlide}
-          disabled={!currentSlide}
+          disabled={!currentStep}
         />
         <ArrowButton
           direction="right"
           onClick={handleRightSlide}
           disabled={
-            itemsInSlide
-              ? currentSlide ===
-                Math.ceil(React.Children.count(children) / itemsInSlide) - 1
+            itemsCountInClientWidth
+              ? currentStep ===
+                Math.ceil(
+                  React.Children.count(children) / itemsCountInClientWidth
+                ) -
+                  1
               : true
           }
         />
       </div>
-      {dots && currentSlide !== undefined && itemsInSlide && (
+      {dots && currentStep !== undefined && itemsCountInClientWidth && (
         <div className={cn(s.dots, dotsClassName)}>
           <Dots
-            amount={Math.ceil(React.Children.count(children) / itemsInSlide)}
-            current={currentSlide}
-            onClick={setCurrentSlide}
+            amount={Math.ceil(
+              React.Children.count(children) / itemsCountInClientWidth
+            )}
+            current={currentStep}
+            onClick={(i: number) => {
+              setCurrentStep(i);
+            }}
           />
         </div>
       )}

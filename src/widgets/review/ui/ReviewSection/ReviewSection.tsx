@@ -13,7 +13,7 @@ const ReviewSection = () => {
             Оцените отзывы о нашей компании на авито
           </h2>
           <Rating className={s.review__rating} />
-          <ReviewContent className={s.review__content} />
+          <ReviewContent />
           <CustomLink href={"/reviews/"} className={s.review__link}>
             Все отзывы
           </CustomLink>

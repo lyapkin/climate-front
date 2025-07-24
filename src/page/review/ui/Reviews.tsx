@@ -1,6 +1,7 @@
 import s from "./styles.module.css";
 import cn from "classnames";
-import { Rating, ReviewContent } from "@/src/widgets/review";
+import { Rating } from "@/src/widgets/review";
+import ReviewContent from "./ReviewContent";
 import { getPageApi } from "@/src/shared/api";
 import { Contact } from "@/src/widgets/sections";
 
@@ -13,7 +14,7 @@ const Reviews = async () => {
           <main className={s.reviews}>
             <h1 className={cn(s.reviews__title, "page-title")}>{data.title}</h1>
             <Rating className={s.reviews__rating} />
-            <ReviewContent className={s.reviews__content} />
+            <ReviewContent />
           </main>
         </div>
       </div>

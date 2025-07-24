@@ -29,3 +29,9 @@
 .button__right svg {
   transform: rotateZ(180deg);
 }
+@media (max-width: 560px) {
+  .button {
+    width: 48px;
+    height: 48px;
+  }
+}

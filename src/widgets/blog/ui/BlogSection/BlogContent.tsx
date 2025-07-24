@@ -1,5 +1,6 @@
 "use client";
-import { ReviewCard, useReviews } from "@/src/entities/review";
+import { usePostsList } from "../../utils";
+import { PostCard } from "@/src/entities/post";
 import s from "./styles.module.css";
 import { Skeleton } from "@/src/shared/ui/loading";
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -7,25 +8,25 @@ import { ArrowButton } from "@/src/shared/ui";
 import { Navigation } from "swiper/modules";
 import "swiper/css";
 
-const ReviewContent = () => {
-  const { data, isError, isPending } = useReviews();
+const BlogContent = () => {
+  const { data, isPending, isError } = usePostsList();
 
   if (isError) {
-    return "Что-то пошло не так";
+    return <div className={s.blog__content}>Что-то пошло не так</div>;
   }
 
   if (isPending) {
     return (
-      <div className={s.review__content}>
+      <div className={s.blog__content_loading}>
         <Skeleton />
       </div>
     );
   }
 
-  const content = data.map((item) => {
+  const content = data.results.map((item) => {
     return (
       <SwiperSlide key={item.id}>
-        <ReviewCard review={item} />
+        <PostCard post={item} />
       </SwiperSlide>
     );
   });
@@ -34,42 +35,40 @@ const ReviewContent = () => {
     <>
       <Swiper
         tag="div"
-        className={s.review__content}
-        modules={[Navigation]}
+        className={s.blog__content}
         slidesPerView={"auto"}
         navigation={{
-          prevEl: ".review__leftButton",
-          nextEl: ".review__rightButton",
+          prevEl: ".blog__leftButton",
+          nextEl: ".blog__rightButton",
           hideOnClick: true,
         }}
+        modules={[Navigation]}
+        spaceBetween={8}
         breakpoints={{
           1576: {
-            slidesPerGroup: 4,
-          },
-          1200: {
             slidesPerGroup: 3,
           },
-          700: {
+          1052: {
             slidesPerGroup: 2,
           },
-          460: {
+          561: {
             slidesPerView: "auto",
-            spaceBetween: 4,
+            spaceBetween: 8,
           },
           320: {
             slidesPerGroup: 1,
-            spaceBetween: 24,
+            spaceBetween: 32,
           },
         }}
       >
         {content}
       </Swiper>
-      <div className={s.review__buttons}>
-        <ArrowButton className="review__leftButton" direction="left" />
-        <ArrowButton className="review__rightButton" direction="right" />
+      <div className={s.blog__buttons}>
+        <ArrowButton className="blog__leftButton" direction="left" />
+        <ArrowButton className="blog__rightButton" direction="right" />
       </div>
     </>
   );
 };
 
-export default ReviewContent;
+export default BlogContent;

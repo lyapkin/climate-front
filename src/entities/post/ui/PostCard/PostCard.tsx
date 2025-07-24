@@ -27,7 +27,7 @@ const PostCard = ({ post }: PostCardProps) => {
       <p className={s.card__excerpt}>{post.excerpt}</p>
       <div className={s.card__link}>
         <Link href={`/blog/${post.slug}/`}>
-          <span>Читать подробнее</span>
+          <span className={s.card__linkText}>Читать подробнее</span>
           <span className={s.card__linkIcon}>
             <svg
               width="19"

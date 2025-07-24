@@ -1,5 +1,5 @@
 "use client";
-import { useState } from "react";
+import React, { useState } from "react";
 import { Service } from "../model";
 import ServiceItem from "./ServiceItem";
 import s from "./styles.module.css";
@@ -8,10 +8,45 @@ import Image from "next/image";
 
 const ServicesContent = ({ data }: ServicesContentProps) => {
   const [currentService, setCurrentService] = useState(0);
+  // const [scrolled, setScrolled] = useState(0);
 
+  // const ref = useRef<HTMLDivElement>(null);
+  // const handleScroll = (e: React.UIEvent<HTMLDivElement, UIEvent>) => {
+  //   if (e.target instanceof Element) {
+  //     const scrolled = e.target.scrollLeft;
+  //     setScrolled(scrolled);
+  //   }
+  // };
+  // const handleScrollLeft = () => {
+  //   if (ref && ref.current) {
+  //     ref.current.scrollLeft = ref.current.scrollLeft - 100;
+  //   }
+  // };
+  // const handleScrollRight = () => {
+  //   if (ref && ref.current) {
+  //     ref.current.scrollLeft = ref.current.scrollLeft + 100;
+  //   }
+  // };
   return (
     <div className={s.content}>
-      <div className={s.content__servicesList}>
+      {/* {scrolled !== 0 && (
+        <button
+          className={s.servicesList__leftButton}
+          onClick={handleScrollLeft}
+        ></button>
+      )}
+      {scrolled + ref.current?.parentElement?.offsetWidth ===
+        ref.current?.offsetWidth && (
+        <button
+          className={s.servicesList__rightButton}
+          onClick={handleScrollRight}
+        ></button>
+      )} */}
+      <div
+        className={s.content__servicesList}
+        // ref={ref}
+        // onScroll={handleScroll}
+      >
         {data.map((item, i) => {
           return (
             <ServiceItem

@@ -3,7 +3,7 @@ import { Stars } from "../Stars";
 import s from "./styles.module.css";
 import { Review } from "@/src/entities/review";
 
-const PreviewCard = ({ review }: PreviewCardProps) => {
+const ReviewCard = ({ review }: ReviewCardProps) => {
   return (
     <article className={s.card}>
       <time dateTime={review.date} className={s.card__date}>
@@ -28,8 +28,8 @@ const PreviewCard = ({ review }: PreviewCardProps) => {
   );
 };
 
-interface PreviewCardProps {
+interface ReviewCardProps {
   review: Review;
 }
 
-export default PreviewCard;
+export default ReviewCard;

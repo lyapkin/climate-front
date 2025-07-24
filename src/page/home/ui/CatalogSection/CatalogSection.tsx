@@ -1,6 +1,8 @@
 import s from "../styles.module.css";
 import cn from "classnames";
 import Catalog from "./Catalog";
+import { Suspense } from "react";
+import { Skeleton } from "@/src/shared/ui/loading";
 
 const CatalogSection = () => {
   return (
@@ -11,7 +13,15 @@ const CatalogSection = () => {
             Предлагаем современные климатические решения по кондиционированию
             воздуха
           </h2>
-          <Catalog />
+          <Suspense
+            fallback={
+              <div className={s.catalogSection__catalog}>
+                <Skeleton />
+              </div>
+            }
+          >
+            <Catalog />
+          </Suspense>
         </div>
       </div>
     </section>

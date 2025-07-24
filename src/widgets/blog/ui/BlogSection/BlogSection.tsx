@@ -4,7 +4,7 @@ import CustomLink from "@/src/shared/ui/CustomLink/CustomLink";
 import { Rubrics } from "@/src/features/rubric";
 import { getBlogRubricsApi } from "../../api";
 import { Suspense } from "react";
-import { BlogContent } from "../BlogContent";
+import BlogContent from "./BlogContent";
 
 const BlogSection = () => {
   return (
@@ -16,7 +16,7 @@ const BlogSection = () => {
           </h2>
           <Rubrics getRubricApi={getBlogRubricsApi} className={s.blog__rubrics}>
             <Suspense>
-              <BlogContent className={s.blog__content} />
+              <BlogContent />
             </Suspense>
           </Rubrics>
           <CustomLink href={"/blog/"} className={s.blog__link}>

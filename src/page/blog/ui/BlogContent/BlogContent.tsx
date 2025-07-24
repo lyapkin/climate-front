@@ -1,8 +1,8 @@
 "use client";
 import { HTMLAttributes } from "react";
-import { usePostsList } from "../../utils";
 import BlogSkeleton from "./BlogSkeleton";
 import { PostCard } from "@/src/entities/post";
+import { usePostsList } from "@/src/widgets/blog/utils";
 
 const BlogContent = ({ className }: HTMLAttributes<HTMLElement>) => {
   const { data, isPending, isError } = usePostsList();

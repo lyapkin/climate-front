@@ -19,10 +19,29 @@
 .blog__content {
   grid-area: content;
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(3, auto);
   gap: 8px;
 }
 .blog__pagination {
   grid-area: pagination;
   justify-content: end;
+}
+@media (max-width: 1120px) {
+  .blog__content {
+    grid-template-columns: repeat(2, auto);
+  }
+}
+@media (max-width: 900px) {
+  .blog {
+    grid-template-areas:
+      "title title"
+      "rubrics rubrics"
+      "content content"
+      "pagination pagination";
+  }
+}
+@media (max-width: 760px) {
+  .blog__content {
+    grid-template-columns: 1fr;
+  }
 }

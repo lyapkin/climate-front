@@ -1,11 +1,11 @@
 .blog {
   display: grid;
-  grid-template-columns: auto 1fr;
+  grid-template-columns: 1fr auto 1fr;
   grid-template-rows: auto auto;
   grid-template-areas:
-    "title rubrics"
-    "content content"
-    "link link";
+    "title title rubrics"
+    "content content content"
+    ". link buttons";
   column-gap: 88px;
   row-gap: 56px;
   align-items: center;
@@ -22,17 +22,29 @@
   grid-area: rubrics;
   min-width: 0;
   position: relative;
+  z-index: 2;
 }
 
 .blog__content {
   grid-area: content;
-  display: flex;
-  gap: 8px;
-  justify-content: flex-start;
-  overflow: auto;
-  scrollbar-width: none;
   margin: -128px -1000px;
   padding: 128px 1000px;
+  box-sizing: content-box;
+}
+.blog__content_loading {
+  grid-area: content;
+  height: 480px;
+}
+.blog__content article {
+  width: 460px;
+}
+
+.blog__buttons {
+  grid-area: buttons;
+  display: flex;
+  gap: 16px;
+  justify-self: end;
+  z-index: 1;
 }
 
 .blog__link {
@@ -41,23 +53,66 @@
   height: 64px;
   justify-self: center;
   position: relative;
+  z-index: 1;
+}
+.blog__content > div > div {
+  flex-shrink: 1;
 }
 
 @media only screen and (max-width: 1120px) {
   .blog {
-    grid-template-columns: 1fr;
-    grid-template-rows: auto auto auto auto;
+    grid-template-columns: 1fr auto 1fr;
     grid-template-areas:
-      "title"
-      "rubrics"
-      "content"
-      "link";
+      "title title title"
+      "rubrics rubrics rubrics"
+      "content content content"
+      ". link buttons";
     row-gap: 32px;
+    column-gap: 0;
+  }
+}
+@media (max-width: 900px) {
+  .blog__title {
+    width: 448px;
   }
 }
 
-@media only screen and (max-width: 580px) {
+@media (max-width: 760px) {
+  .blog {
+    grid-template-columns: auto auto;
+    grid-template-rows: auto auto auto auto;
+    grid-template-areas:
+      "title title"
+      "rubrics rubrics"
+      "content content"
+      "buttons link";
+  }
+  .blog__buttons {
+    justify-self: start;
+  }
   .blog__link {
+    justify-self: end;
+  }
+}
+
+@media only screen and (max-width: 560px) {
+  .blog__title {
     width: 100%;
+  }
+  .blog__buttons {
+    gap: 8px;
+  }
+  .blog__link {
+    width: 186px;
+    height: 48px;
+  }
+  a.blog__link {
+    font-size: 12px;
+  }
+  .blog__content > div > div {
+    flex-shrink: 0;
+  }
+  .blog__content article {
+    width: auto;
   }
 }

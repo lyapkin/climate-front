@@ -20,3 +20,28 @@
   grid-template-columns: repeat(4, 1fr);
   gap: 4px;
 }
+@media (max-width: 1400px) {
+  .reviews__content {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+@media (max-width: 900px) {
+  .reviews {
+    grid-template-areas:
+      "title"
+      "rating"
+      "content";
+    grid-template-columns: 1fr;
+    row-gap: 32px;
+  }
+}
+@media (max-width: 1060px) {
+  .reviews__content {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (max-width: 640px) {
+  .reviews__content {
+    grid-template-columns: 1fr;
+  }
+}

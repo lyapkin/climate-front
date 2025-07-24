@@ -1,6 +1,6 @@
 "use client";
 import { Pagination } from "@/src/features/pagination";
-import { usePostsList } from "../../utils";
+import { usePostsList } from "@/src/widgets/blog/utils";
 import { HTMLAttributes } from "react";
 
 const BlogPagination = ({ className }: HTMLAttributes<HTMLElement>) => {

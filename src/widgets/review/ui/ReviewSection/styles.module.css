@@ -1,34 +1,102 @@
 .review {
   display: grid;
-  grid-template-columns: 400px 1fr;
+  grid-template-columns: 1fr auto auto 1fr;
   grid-template-rows: repeat(3, auto);
   grid-template-areas:
-    "title rating"
-    "content content"
-    "link link";
+    "title title rating rating"
+    "content content content content"
+    ". link link buttons";
   row-gap: 56px;
   align-items: center;
 }
 .review__title {
   grid-area: title;
+  width: 400px;
 }
 .review__rating {
   grid-area: rating;
   justify-self: end;
+  z-index: 1;
 }
 .review__content {
   grid-area: content;
-  display: flex;
-  gap: 4px;
-  justify-content: flex-start;
-  overflow: auto;
-  scrollbar-width: none;
   margin: -128px -1000px;
   padding: 128px 1000px;
+  height: 464px;
+  box-sizing: content-box;
 }
 .review__link {
   grid-area: link;
   width: 324px;
   height: 80px;
   justify-self: center;
+  z-index: 1;
+}
+.review__buttons {
+  grid-area: buttons;
+  display: flex;
+  gap: 16px;
+  justify-self: end;
+  z-index: 1;
+}
+.review__content > div > div {
+  flex-shrink: 1;
+}
+.review__content article {
+  width: 348px;
+}
+@media (max-width: 900px) {
+  .review {
+    gap: 32px;
+  }
+  .review__title {
+    width: 278px;
+  }
+}
+@media (max-width: 760px) {
+  .review {
+    grid-template-columns: auto auto auto;
+    grid-template-areas:
+      "title title rating"
+      "content content content"
+      "buttons link link";
+    column-gap: 0;
+  }
+  .review__buttons {
+    justify-self: start;
+  }
+  .review__link {
+    justify-self: end;
+  }
+}
+@media (max-width: 560px) {
+  .review {
+    grid-template-columns: auto auto;
+    grid-template-areas:
+      "title title"
+      "rating rating"
+      "content content"
+      "buttons link";
+  }
+  .review__buttons {
+    gap: 8px;
+  }
+  .review__rating {
+    justify-self: start;
+  }
+  .review__link {
+    width: 186px;
+    height: 48px;
+  }
+  a.review__link {
+    font-size: 12px;
+  }
+}
+@media (max-width: 460px) {
+  .review__content article {
+    width: auto;
+  }
+  .review__content > div > div {
+    flex-shrink: 0;
+  }
 }

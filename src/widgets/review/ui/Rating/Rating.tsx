@@ -1,7 +1,7 @@
 import React, { HTMLAttributes } from "react";
 import s from "./styles.module.css";
 import cn from "classnames";
-import { Stars } from "../Stars";
+import { Stars } from "@/src/entities/review";
 
 const Rating = ({ className }: HTMLAttributes<HTMLElement>) => {
   const rate = 5.0;

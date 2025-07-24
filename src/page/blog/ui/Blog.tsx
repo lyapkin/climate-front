@@ -1,14 +1,12 @@
 import s from "./styles.module.css";
 import cn from "classnames";
 import { getPageApi } from "@/src/shared/api";
-import {
-  BlogContent,
-  BlogPagination,
-  getBlogRubricsApi,
-} from "@/src/widgets/blog";
+import { getBlogRubricsApi } from "@/src/widgets/blog";
 import { Rubrics } from "@/src/features/rubric";
 import { Suspense } from "react";
 import { Contact } from "@/src/widgets/sections";
+import { BlogContent } from "./BlogContent";
+import { BlogPagination } from "./BlogPagination";
 
 const Blog = async () => {
   const data = await getPageApi("blog");

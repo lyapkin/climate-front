@@ -1,16 +1,19 @@
+.consultationPopup,
 .consultation {
-  position: relative;
-  grid-column: 1 / -1;
   background-color: #fff;
   padding: 40px;
   display: flex;
   flex-direction: column;
   gap: 16px;
+  border-radius: var(--radius2);
+}
+.consultation {
+  position: relative;
+  grid-column: 1 / -1;
   background-image: url("/images/form/plugin-bg.png");
   background-repeat: no-repeat;
   background-position: right bottom;
   background-size: 40%;
-  border-radius: var(--radius2);
   box-shadow: -5px 8px 21px 0px rgba(166, 166, 166, 0.1),
     -21px 31px 38px 0px rgba(166, 166, 166, 0.09),
     -48px 71px 51px 0px rgba(166, 166, 166, 0.05),
@@ -19,6 +22,7 @@
   position: relative;
   border: 1px solid #ededed;
 }
+
 .consultation__title {
   font-weight: 600;
   font-size: 24px;
@@ -66,7 +70,15 @@
     margin-bottom: 196px;
     width: auto;
   }
+  .consultationPopup .consultation__subtitle {
+    margin-bottom: 0;
+  }
   .consultation__button {
     width: 100%;
+  }
+}
+@media (max-width: 560px) {
+  .consultationPopup {
+    padding: 24px 5vw;
   }
 }

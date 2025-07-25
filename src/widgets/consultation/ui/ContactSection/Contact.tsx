@@ -1,4 +1,4 @@
-import { GetConsultation } from "./Consultation";
+import { GetConsultation } from "@/src/features/consultation";
 import s from "./styles.module.css";
 import cn from "classnames";
 

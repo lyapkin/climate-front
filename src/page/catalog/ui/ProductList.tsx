@@ -3,8 +3,8 @@ import { CardSkeleton, NoResult } from "@/src/shared/ui";
 import { ProductCard } from "@/src/widgets/product";
 import { useGetProducts } from "@/src/widgets/product/utils";
 import { JSX } from "react";
-import { ConsultationPlugin } from "./ConsultationPlugin";
 import { PromoPlugin } from "@/src/widgets/promo";
+import { ContactPlugin } from "@/src/widgets/consultation";
 
 const ProductList = () => {
   const { data, isError, isPending } = useGetProducts();
@@ -38,7 +38,7 @@ const ProductList = () => {
       content.push(<PromoPlugin key={-1} />);
     }
     if (index === 8) {
-      content.push(<ConsultationPlugin key={-2} />);
+      content.push(<ContactPlugin key={-2} />);
     }
     content.push(<ProductCard key={item.id} product={item} />);
   });

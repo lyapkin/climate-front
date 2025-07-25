@@ -5,7 +5,7 @@ import QuestionsListSkeleton from "./QuestionsListSkeleton";
 import { getFAQCategoriesApi } from "../api";
 import cn from "classnames";
 import { getPageApi } from "@/src/shared/api";
-import { Contact } from "@/src/widgets/sections";
+import { Contact } from "@/src/widgets/consultation";
 import { Rubrics } from "@/src/features/rubric";
 
 const Faq = async () => {

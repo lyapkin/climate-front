@@ -121,6 +121,10 @@
 }
 .promo__cta {
   grid-area: cta;
+  z-index: 1;
+  width: 200px;
+  height: 64px;
+  box-sizing: content-box;
 }
 .promo__controls {
   grid-area: controls;
@@ -139,11 +143,6 @@
 }
 .promo__aside {
   padding-bottom: 80px;
-}
-
-.cta {
-  width: 200px;
-  height: 64px;
 }
 
 .img {
@@ -245,8 +244,9 @@
   .promo__controls {
     justify-self: start;
   }
-  .cta {
+  .promo__cta {
     width: 100%;
+    box-sizing: border-box;
   }
   .promo__dots > * {
     display: none;
@@ -296,10 +296,6 @@
     width: 48px;
     height: 48px;
   }
-  .cta {
-    height: 48px;
-    font-size: 12px;
-  }
   .promo__date,
   .promo__img,
   .promo__aside,
@@ -315,5 +311,7 @@
   }
   .promo__cta {
     padding-left: 0;
+    height: 48px;
+    font-size: 12px;
   }
 }

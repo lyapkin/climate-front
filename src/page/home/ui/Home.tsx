@@ -6,7 +6,7 @@ import { Logos } from "./Logos";
 import { ReviewSection } from "@/src/widgets/review";
 import About from "./About/About";
 import { Promo } from "@/src/widgets/promo";
-import { Contact } from "@/src/widgets/sections";
+import { Contact } from "@/src/widgets/consultation";
 import { BlogSection } from "@/src/widgets/blog";
 import { Suspense } from "react";
 

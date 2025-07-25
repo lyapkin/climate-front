@@ -1,0 +1,63 @@
+.form {
+  display: grid;
+  grid-template-areas:
+    "name phone"
+    "comment comment"
+    "button agreement";
+  gap: 8px;
+}
+.form__field {
+  width: 100%;
+  height: 72px;
+}
+.form__name {
+  grid-area: name;
+}
+.form__phone {
+  grid-area: phone;
+}
+.form__button {
+  grid-area: button;
+  width: 90%;
+}
+.form__agreement {
+  grid-area: agreement;
+  align-self: center;
+}
+.form__comment {
+  grid-area: comment;
+  height: 172px;
+  width: 100%;
+}
+.form__button {
+  height: 80px;
+}
+@media (max-width: 760px) {
+  .form {
+    grid-template-areas:
+      "name"
+      "phone"
+      "comment"
+      "button"
+      "agreement";
+  }
+  .form__button {
+    width: 100%;
+  }
+  .form__agreement {
+    justify-self: center;
+    text-align: center;
+  }
+}
+
+@media only screen and (max-width: 560px) {
+  .form__field {
+    height: 56px;
+  }
+  .form__comment {
+    height: 96px;
+  }
+  .form__button {
+    height: 64px;
+  }
+}

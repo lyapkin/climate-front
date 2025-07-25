@@ -36,6 +36,7 @@
   position: relative;
   aspect-ratio: 572/512;
   height: 100%;
+  cursor: pointer;
 }
 
 .slide__button {
@@ -64,10 +65,13 @@
   right: 0;
   transform: translateY(-50%) rotateZ(180deg);
 }
-/* .imgs__current > div {
-  display: flex;
-  height: 100%;
-} */
+.popupImage {
+  background-color: #fff;
+  position: relative;
+  width: 90vw;
+  height: 90vh;
+  border-radius: var(--radius2);
+}
 @media (hover: hover) {
   .slide__button:hover {
     opacity: 1;

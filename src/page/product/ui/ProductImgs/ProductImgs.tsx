@@ -1,9 +1,8 @@
 "use client";
-// import { useRef, useState } from "react";
 import s from "./styles.module.css";
 import Image from "next/image";
 import cn from "classnames";
-// import ProductPicture from "./ProductPicture";
+import ProductPicture from "./ProductPicture";
 import { ProductDetail } from "@/src/entities/product";
 import { HTMLAttributes, useEffect, useRef, useState } from "react";
 import SlideButton from "./SlideButton";
@@ -36,7 +35,7 @@ const ProductImgs = ({ imgs, alt, className }: ProductImgsProps) => {
   const content = imgs.map((item) => {
     return (
       <SwiperSlide tag="div" key={item.id} className={s.current__img}>
-        <Image src={imgs[0].url} fill alt={alt} objectFit="contain" />
+        <ProductPicture key={item.id} url={item.url} alt={alt} />
       </SwiperSlide>
     );
   });
@@ -56,9 +55,6 @@ const ProductImgs = ({ imgs, alt, className }: ProductImgsProps) => {
         onSlideChange={(swiper) => setCurrentSlideIndex(swiper.activeIndex)}
         ref={swiperRef}
       >
-        {/* {imgs.map((item) => (
-            <ProductPicture key={item.id} url={item.url} alt={alt} />
-          ))} */}
         {content}
         <SlideButton orintation="left" className="productPicture__leftButton" />
         <SlideButton

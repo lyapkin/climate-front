@@ -1,11 +1,12 @@
 "use client";
-import { ArrowButton, Button } from "@/src/shared/ui";
+import { ArrowButton } from "@/src/shared/ui";
 import { Promo } from "../../model";
 import { PromoDate } from "../PromoDate";
 import s from "./styles.module.css";
 import Image from "next/image";
 import Dots from "@/src/shared/components/slider/Dots";
 import { useState } from "react";
+import { PromoBook } from "../PromoBook";
 
 const PromoContent = ({ promos }: PromoContentProps) => {
   const [currentPromo, setCurrentPromo] = useState<number>(0);
@@ -14,9 +15,7 @@ const PromoContent = ({ promos }: PromoContentProps) => {
       <h3 className={s.promo__title}>{promos[currentPromo].name}</h3>
       <p className={s.promo__subtitle}>{promos[currentPromo].text}</p>
       <PromoDate date={promos[currentPromo].date} className={s.promo__date} />
-      <div className={s.promo__cta}>
-        <Button className={s.cta}>Забронировать</Button>
-      </div>
+      <PromoBook className={s.promo__cta} />
       <div className={s.promo__controls}>
         <ArrowButton
           direction="left"

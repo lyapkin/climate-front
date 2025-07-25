@@ -4,7 +4,7 @@ import cn from "classnames";
 import ContactBlock from "./ContactBlock";
 
 import { getPageApi } from "@/src/shared/api";
-import { Contact } from "@/src/widgets/sections";
+import { Contact } from "@/src/widgets/consultation";
 import { getContactsApi, getRequisitesApi } from "@/src/entities/contact";
 
 const Contacts = async () => {

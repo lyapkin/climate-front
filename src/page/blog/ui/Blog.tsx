@@ -4,9 +4,9 @@ import { getPageApi } from "@/src/shared/api";
 import { getBlogRubricsApi } from "@/src/widgets/blog";
 import { Rubrics } from "@/src/features/rubric";
 import { Suspense } from "react";
-import { Contact } from "@/src/widgets/sections";
 import { BlogContent } from "./BlogContent";
 import { BlogPagination } from "./BlogPagination";
+import { Contact } from "@/src/widgets/consultation";
 
 const Blog = async () => {
   const data = await getPageApi("blog");

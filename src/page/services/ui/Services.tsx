@@ -3,7 +3,7 @@ import cn from "classnames";
 import { getPageApi } from "@/src/shared/api";
 import ServicesContent from "./ServicesContent";
 import { getServicesApi } from "../api";
-import { Contact } from "@/src/widgets/sections";
+import { Contact } from "@/src/widgets/consultation";
 
 const Services = async () => {
   const [data, content] = await Promise.all([

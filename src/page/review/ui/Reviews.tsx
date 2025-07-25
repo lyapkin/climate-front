@@ -3,7 +3,7 @@ import cn from "classnames";
 import { Rating } from "@/src/widgets/review";
 import ReviewContent from "./ReviewContent";
 import { getPageApi } from "@/src/shared/api";
-import { Contact } from "@/src/widgets/sections";
+import { Contact } from "@/src/widgets/consultation";
 
 const Reviews = async () => {
   const data = await getPageApi("reviews");

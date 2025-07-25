@@ -569,8 +569,8 @@
 }
 .catalogSection__catalog {
   grid-area: catalog;
-  margin: -128px -1000px;
-  padding: 128px 1000px;
+  margin: -128px -1000px !important;
+  padding: 128px 1000px !important;
 }
 .catalogSection__catalog > div > div {
   flex-shrink: 1;
@@ -652,8 +652,8 @@
   height: 356px;
   min-width: 0;
   width: 100%;
-  padding: 128px 1024px;
-  margin: -128px -1024px;
+  padding: 128px 1024px !important;
+  margin: -128px -1024px !important;
   box-sizing: content-box;
 }
 .logos__buttons {

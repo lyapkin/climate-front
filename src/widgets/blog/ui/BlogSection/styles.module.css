@@ -27,8 +27,8 @@
 
 .blog__content {
   grid-area: content;
-  margin: -128px -1000px;
-  padding: 128px 1000px;
+  margin: -128px -1000px !important;
+  padding: 128px 1000px !important;
   box-sizing: content-box;
 }
 .blog__content_loading {

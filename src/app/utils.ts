@@ -18,7 +18,10 @@ export const generateMetadataUtil = (
       alternates: {
         canonical,
       },
-      robots,
+      robots: {
+        index: false,
+        follow: false,
+      },
     };
   }
 
@@ -28,9 +31,6 @@ export const generateMetadataUtil = (
     alternates: {
       canonical,
     },
-    robots: {
-      index: false,
-      follow: false,
-    },
+    robots,
   };
 };

@@ -31,6 +31,9 @@ export const generateMetadataUtil = (
     alternates: {
       canonical,
     },
-    robots,
+    robots: {
+      index: false,
+      follow: false,
+    },
   };
 };

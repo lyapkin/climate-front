@@ -109,7 +109,7 @@ const GetConsultation = ({ className, cleanUp = () => {} }: Props) => {
 
 interface Props {
   className?: string;
-  cleanUp: () => void;
+  cleanUp?: () => void;
 }
 
 type Form = {

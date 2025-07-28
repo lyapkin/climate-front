@@ -13,7 +13,7 @@ const ServicesPage = async () => {
         "@type": "ListItem",
         position: 1,
         name: "Услуги",
-        item: `${process.env.SITE_URL}/services/`,
+        item: `${process.env.NEXT_PUBLIC_SITE_URL}/services/`,
       },
     ],
   };

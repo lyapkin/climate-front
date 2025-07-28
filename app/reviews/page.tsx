@@ -13,7 +13,7 @@ const ReviewsPage = async () => {
         "@type": "ListItem",
         position: 1,
         name: "Отзывы",
-        item: `${process.env.SITE_URL}/reviews/`,
+        item: `${process.env.NEXT_PUBLIC_SITE_URL}/reviews/`,
       },
     ],
   };

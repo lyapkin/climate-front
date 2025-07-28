@@ -34,21 +34,21 @@ const ProductPage = async ({
         "@type": "ListItem",
         position: 1,
         name: "Каталог",
-        item: `${process.env.BACK_URL}/catalog/`,
+        item: `${process.env.NEXT_PUBLIC_SITE_URL}/catalog/`,
       },
       ...product.categories.map((item, i) => {
         return {
           "@type": "ListItem",
           position: i + 2,
           name: item.name,
-          item: `${process.env.BACK_URL}/catalog/${item.slug}/`,
+          item: `${process.env.NEXT_PUBLIC_SITE_URL}/catalog/${item.slug}/`,
         };
       }),
       {
         "@type": "ListItem",
         position: product.categories.length + 2,
         name: product.name,
-        item: `${process.env.BACK_URL}/product/${slug}/#`,
+        item: `${process.env.NEXT_PUBLIC_SITE_URL}/product/${slug}/#`,
       },
     ],
   };

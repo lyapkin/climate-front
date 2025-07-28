@@ -13,7 +13,7 @@ const CatalogPage = () => {
         "@type": "ListItem",
         position: 1,
         name: "Каталог",
-        item: `${process.env.SITE_URL}/catalog/`,
+        item: `${process.env.NEXT_PUBLIC_SITE_URL}/catalog/`,
       },
     ],
   };

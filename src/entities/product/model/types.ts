@@ -1,5 +1,7 @@
 // import { Metadata } from "@/src/shared/types";
 
+import { Metadata } from "@/src/shared/types";
+
 type ProductImg = {
   id: number;
   url: string;
@@ -39,8 +41,9 @@ export type ProductDetail = {
   imgs: ProductImg[];
   description: string;
   docs: ProductDoc[];
-  // metadata: Metadata;
+  metadata: Metadata;
   code: string;
+  categories: { id: number; slug: string; name: string }[];
 } & ProductBase;
 
 export type ProductPreview = {

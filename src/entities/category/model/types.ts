@@ -1,3 +1,5 @@
+import { Metadata } from "@/src/shared/types";
+
 type CategoryBase = {
   id: number;
   name: string;
@@ -12,4 +14,5 @@ export type Category = {
 export type CategoryDetail = {
   children: CategoryBase[];
   parents: CategoryBase[];
+  metadata: Metadata;
 } & CategoryBase;

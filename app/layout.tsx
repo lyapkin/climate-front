@@ -35,4 +35,5 @@ export default function RootLayout({
 export const metadata: Metadata = {
   title: "Климов Климат",
   description: "",
+  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL + "/"),
 };

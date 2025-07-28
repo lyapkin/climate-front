@@ -4,7 +4,7 @@ import { getProductsApi } from "../api";
 import useQueryKey from "./useQueryKey";
 
 export const useGetProducts = () => {
-  const params = useParams<{ category?: string }>();
+  const params = useParams<{ slug?: string }>();
   const queryKey = useQueryKey();
   const searchParams = useSearchParams();
 
@@ -12,8 +12,8 @@ export const useGetProducts = () => {
     queryKey: ["products", params, queryKey],
     queryFn: () => {
       const urlSearchParams = new URLSearchParams(searchParams);
-      if (params.category) {
-        urlSearchParams.set("category", params.category);
+      if (params.slug) {
+        urlSearchParams.set("category", params.slug);
       }
       return getProductsApi(urlSearchParams);
     },

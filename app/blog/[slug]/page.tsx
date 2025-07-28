@@ -58,12 +58,12 @@ export const generateMetadata = async (
 ): Promise<Metadata> => {
   const { slug } = await params;
   const searchParamsData = await searchParams;
-  const post = await getPostApi(slug);
+  const page = await getPostApi(slug);
 
   return generateMetadataUtil(
     parent,
     `blog/${slug}/`,
-    post.metadata,
+    page.metadata,
     searchParamsData
   );
 };

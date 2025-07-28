@@ -1,6 +1,8 @@
+import { generateMetadataUtil } from "@/src/app/utils";
 import { getProductDetailApi } from "@/src/entities/product";
 import { Product } from "@/src/page/product";
 import { Breadcrumbs, BreadcrumbsItem } from "@/src/widgets/breadcrumbs";
+import { Metadata, ResolvingMetadata } from "next";
 
 const ProductPage = async ({
   params,
@@ -34,17 +36,19 @@ const ProductPage = async ({
         name: "Каталог",
         item: `${process.env.BACK_URL}/catalog/`,
       },
-      // {
-      //   "@type": "ListItem",
-      //   position: 2,
-      //   name: product.,
-      //   item: `${process.env.BACK_URL}/catalog/${product.categories[0].slug}/`,
-      // },
+      ...product.categories.map((item, i) => {
+        return {
+          "@type": "ListItem",
+          position: i + 2,
+          name: item.name,
+          item: `${process.env.BACK_URL}/catalog/${item.slug}/`,
+        };
+      }),
       {
         "@type": "ListItem",
-        position: 2,
+        position: product.categories.length + 2,
         name: product.name,
-        item: `${process.env.BACK_URL}/product/${slug}/`,
+        item: `${process.env.BACK_URL}/product/${slug}/#`,
       },
     ],
   };
@@ -52,6 +56,13 @@ const ProductPage = async ({
     <>
       <Breadcrumbs>
         <BreadcrumbsItem link="/catalog/">Каталог</BreadcrumbsItem>
+        {product.categories.map((item) => {
+          return (
+            <BreadcrumbsItem key={item.id} link={`/catalog/${item.slug}/`}>
+              {item.name}
+            </BreadcrumbsItem>
+          );
+        })}
         <BreadcrumbsItem>{product.name}</BreadcrumbsItem>
       </Breadcrumbs>
       <Product product={product} />
@@ -69,3 +80,50 @@ const ProductPage = async ({
 };
 
 export default ProductPage;
+
+export const generateMetadata = async (
+  {
+    params,
+    searchParams,
+  }: {
+    params: Promise<{ slug: string }>;
+    searchParams: Promise<{ [key: string]: string | string[] | undefined }>;
+  },
+  parent: ResolvingMetadata
+): Promise<Metadata> => {
+  const { slug } = await params;
+  const searchParamsData = await searchParams;
+  const page = await getProductDetailApi(slug);
+
+  const meta = generateMetadataUtil(
+    parent,
+    `catalog/${slug}/`,
+    page.metadata,
+    searchParamsData
+  );
+
+  return {
+    ...meta,
+    openGraph: {
+      type: "website",
+      images: [
+        {
+          url: page.imgs[0].url,
+          width: 1200,
+          height: 630,
+        },
+      ],
+    },
+    twitter: {
+      card: "summary_large_image",
+      images: [
+        {
+          url: page.imgs[0].url,
+          width: 1200,
+          height: 630,
+          // type: "image/webp",
+        },
+      ],
+    },
+  };
+};

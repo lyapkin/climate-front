@@ -18,6 +18,8 @@ const Agreement = async () => {
 export default Agreement;
 
 export const metadata = {
+  title: "Климов Климат | Пользовательское соглашение",
+  description: "Пользовательское соглашение",
   alternates: {
     canonical: "agreement/",
   },

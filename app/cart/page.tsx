@@ -31,6 +31,8 @@ const CartPage = () => {
 export default CartPage;
 
 export const metadata = {
+  title: "Климов Климат | Корзина",
+  description: "Корзина",
   alternates: {
     canonical: "cart/",
   },

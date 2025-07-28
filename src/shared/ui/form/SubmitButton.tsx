@@ -1,9 +1,9 @@
-// import Spinner from "../loading/spinners/Spinner";
 import s from "./styles.module.css";
 import { ButtonHTMLAttributes, DetailedHTMLProps } from "react";
 import cn from "classnames";
-// import Sent from "./Sent";
+import Sent from "./Sent";
 import { Button } from "@/src/shared/ui/Button";
+import { Spinner } from "../loading";
 
 const SubmitButton = ({
   isSending,
@@ -14,16 +14,18 @@ const SubmitButton = ({
 }: SubmitButtonProps) => {
   if (isSubmited) {
     return (
-      <div className={cn(s.submitButton, className)}>{/* <Sent /> */}</div>
+      <div className={cn(s.submitButton, className)}>
+        <Sent />
+      </div>
     );
   }
   return (
     <div className={cn(s.submitButton, className)}>
-      {/* {isSending && (
+      {isSending && (
         <div className={s.submitButton_loading}>
           <Spinner />
         </div>
-      )} */}
+      )}
       <Button type={"submit"} disabled={isSending} {...rest}>
         {text}
       </Button>

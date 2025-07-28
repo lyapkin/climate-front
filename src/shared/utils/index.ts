@@ -3,6 +3,7 @@ import { emptyArr } from "./emptyArr";
 import { formatPhoneNumber } from "./formatPhoneNumber";
 import { generateQueryKey } from "./generateQueryKey";
 import { getCookie } from "./getCookie";
+import { getRandomInteger } from "./getRandomInteger";
 import { isNumber } from "./isNumber";
 
 export {
@@ -12,4 +13,5 @@ export {
   getCookie,
   isNumber,
   emptyArr,
+  getRandomInteger,
 };

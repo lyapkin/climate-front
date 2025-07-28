@@ -5,6 +5,8 @@ import { CartProvider, QueryProvider } from "@/src/app/providers";
 import ClipPaths from "@/src/shared/components/clipPaths/ClipPaths";
 import { Header } from "@/src/widgets/header";
 import { Footer } from "@/src/widgets/footer";
+import { Suspense } from "react";
+import { FormSuccess } from "@/src/shared/ui/form";
 
 export default function RootLayout({
   children,
@@ -22,6 +24,9 @@ export default function RootLayout({
           </CartProvider>
         </QueryProvider>
         <ClipPaths />
+        <Suspense>
+          <FormSuccess />
+        </Suspense>
       </body>
     </html>
   );

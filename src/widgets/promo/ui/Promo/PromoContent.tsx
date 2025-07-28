@@ -15,7 +15,7 @@ const PromoContent = ({ promos }: PromoContentProps) => {
       <h3 className={s.promo__title}>{promos[currentPromo].name}</h3>
       <p className={s.promo__subtitle}>{promos[currentPromo].text}</p>
       <PromoDate date={promos[currentPromo].date} className={s.promo__date} />
-      <PromoBook className={s.promo__cta} />
+      <PromoBook className={s.promo__cta} promoId={promos[currentPromo].id} />
       <div className={s.promo__controls}>
         <ArrowButton
           direction="left"

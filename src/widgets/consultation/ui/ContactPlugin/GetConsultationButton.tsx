@@ -20,7 +20,7 @@ const GetConsultationButton = ({ className }: HTMLAttributes<HTMLElement>) => {
           <p className={s.consultation__subtitle}>
             Оставьте свои контакты и мы свяжемся с вами в течение 10 минут.
           </p>
-          <GetConsultation />
+          <GetConsultation cleanUp={() => setOpen(false)} />
         </div>
       </Popup>
     </>

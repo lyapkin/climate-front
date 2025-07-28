@@ -23,6 +23,7 @@ const CartForm = ({ className }: CartFormProps) => {
   if (data.length === 0) {
     return null;
   }
+
   return (
     <div className={cn(s.cartForm, className)}>
       <p className={s.cartForm__title}>Введите контактные данные</p>

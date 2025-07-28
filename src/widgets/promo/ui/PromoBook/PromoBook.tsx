@@ -5,7 +5,7 @@ import { Button } from "@/src/shared/ui";
 import PromoForm from "./PromoForm";
 import { Popup } from "@/src/shared/components/client";
 
-const PromoBook = ({ className }: HTMLAttributes<HTMLElement>) => {
+const PromoBook = ({ promoId, className }: Props) => {
   const [open, setOpen] = useState(false);
   return (
     <>
@@ -15,10 +15,14 @@ const PromoBook = ({ className }: HTMLAttributes<HTMLElement>) => {
         </Button>
       </div>
       <Popup open={open} close={() => setOpen(false)}>
-        <PromoForm />
+        <PromoForm promo={promoId} cleanUp={() => setOpen(false)} />
       </Popup>
     </>
   );
 };
+
+interface Props extends HTMLAttributes<HTMLElement> {
+  promoId: number;
+}
 
 export default PromoBook;

@@ -4,6 +4,7 @@ import SubmitButton from "./SubmitButton";
 import Agreement from "./Agreement";
 import CheckboxInput from "./CheckboxInput";
 import TextareaField from "./TextareaField";
+import FormSuccess from "./FormSuccess";
 
 export {
   InputField,
@@ -12,4 +13,5 @@ export {
   Agreement,
   CheckboxInput,
   TextareaField,
+  FormSuccess,
 };

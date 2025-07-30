@@ -20,6 +20,23 @@ const Logo = ({ className }: LogoProps) => {
           position: "relative",
           minWidth: 0,
           height: "80%",
+          // aspectRatio: "144/56",
+          aspectRatio: "280/56",
+        }}
+      >
+        <Image
+          src={"/images/logo.svg"}
+          alt="Климов Климат"
+          fill
+          loading="eager"
+          style={{ objectFit: "contain" }}
+        />
+      </span>
+      {/* <span
+        style={{
+          position: "relative",
+          minWidth: 0,
+          height: "80%",
           aspectRatio: "1/1",
         }}
       >
@@ -46,7 +63,7 @@ const Logo = ({ className }: LogoProps) => {
           loading="eager"
           style={{ objectFit: "contain" }}
         />
-      </span>
+      </span> */}
     </Link>
   );
 };

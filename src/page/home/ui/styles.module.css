@@ -1,12 +1,12 @@
-.bluebg {
-  background-image: url("/images/home/about/bg.jpg");
+/* .bluebg {
+  background-image: url("/images/home/about/bg.webp");
   background-repeat: no-repeat;
   background-position: top center;
   background-size: cover;
-}
+} */
 
 .heroSection {
-  background-image: url("/images/home/hero/bg.png");
+  background-image: url("/images/home/hero/bg.webp");
   background-repeat: no-repeat;
   background-size: cover;
   background-color: #fbfbfb;

@@ -128,7 +128,7 @@ textarea:disabled {
   padding-top: 264px;
 }
 .bluebg {
-  background-image: url("/images/home/about/bg.jpg");
+  background-image: url("/images/home/about/bg.webp");
   background-repeat: no-repeat;
   background-position: top center;
   background-size: cover;

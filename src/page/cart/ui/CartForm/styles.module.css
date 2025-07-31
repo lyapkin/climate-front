@@ -10,7 +10,7 @@
     -85px 126px 61px 0px rgba(166, 166, 166, 0.01),
     -133px 197px 66px 0px rgba(166, 166, 166, 0);
   border-radius: var(--radius2);
-  background-image: url("/images/cart/bg.png");
+  background-image: url("/images/cart/bg.webp");
   background-repeat: no-repeat;
   background-size: 100%;
   background-position: top 56px center;

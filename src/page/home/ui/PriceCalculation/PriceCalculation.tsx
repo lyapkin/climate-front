@@ -5,7 +5,10 @@ import Info from "./Info";
 
 const PriceCalculation = () => {
   return (
-    <section className={cn(s.priceCalculationSection, "section")}>
+    <section
+      className={cn(s.priceCalculationSection, "section")}
+      id="calculation"
+    >
       <div className="container">
         <div className={cn(s.priceCalculation, "section-flex")}>
           <h2 className={cn(s.priceCalculation__title, "section-title")}>

@@ -32,7 +32,7 @@ const Header = async () => {
             <NavItem link={"/catalog/"} className={s.header__navItem}>
               Каталог
             </NavItem>
-            <NavItem link={"/calculation/"} className={s.header__navItem}>
+            <NavItem link={"/#calculation"} className={s.header__navItem}>
               Рассчет стоимости
             </NavItem>
             <NavItem link={"/contacts/"} className={s.header__navItem}>

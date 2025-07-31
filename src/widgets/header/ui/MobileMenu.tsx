@@ -62,7 +62,7 @@ const MobileMenu = ({ className, contacts }: MobileMenuProps) => {
             <NavItem link={"/catalog/"} className={s.mobileMenu__navItem}>
               Каталог
             </NavItem>
-            <NavItem link={"/calculation/"} className={s.mobileMenu__navItem}>
+            <NavItem link={"/#calculation"} className={s.mobileMenu__navItem}>
               Рассчет стоимости
             </NavItem>
             <NavItem link={"/contacts/"} className={s.mobileMenu__navItem}>

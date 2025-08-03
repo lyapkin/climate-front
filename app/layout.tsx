@@ -7,6 +7,7 @@ import { Header } from "@/src/widgets/header";
 import { Footer } from "@/src/widgets/footer";
 import { Suspense } from "react";
 import { FormSuccess } from "@/src/shared/ui/form";
+import CookieConsent from "@/src/widgets/cookieConsent/CookieConsent";
 
 export default function RootLayout({
   children,
@@ -27,6 +28,7 @@ export default function RootLayout({
         <Suspense>
           <FormSuccess />
         </Suspense>
+        <CookieConsent />
       </body>
     </html>
   );

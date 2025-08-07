@@ -35,6 +35,9 @@
 /* .attrs__valueItem:not(:last-of-type)::after {
   content: "; ";
 } */
+.attrs__stock {
+  color: #40ac65;
+}
 
 @media (max-width: 800px) {
   .attrs__name {

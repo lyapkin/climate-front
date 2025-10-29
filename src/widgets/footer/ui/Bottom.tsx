@@ -8,7 +8,7 @@ const Bottom = () => {
         <div className={s.bottom}>
           <p className={s.cr}>
             Все права защищены © 2025. при копировании обязательна ссылка на
-            сайт stroy-technology.ru
+            сайт klimov-climat.ru
           </p>
           <div className={s.policy}>
             <Link href={"/privacy/"}>Политика конфиденциальности</Link>

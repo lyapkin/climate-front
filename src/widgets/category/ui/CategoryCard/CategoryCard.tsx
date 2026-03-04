@@ -25,7 +25,7 @@ const CategoryCard = ({ category }: CategoryCardProps) => {
             src={category.img}
             alt={category.name}
             fill
-            style={{ objectFit: "contain" }}
+            style={{ objectFit: "contain", objectPosition: "right bottom" }}
           />
         </div>
       )}

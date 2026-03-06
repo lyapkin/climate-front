@@ -1,7 +1,8 @@
 import s from "../styles.module.css";
 import cn from "classnames";
-import Quiz from "./Quiz";
 import Info from "./Info";
+import { Quiz } from "@/src/widgets/quiz";
+import { quizSteps } from "./constants/quiz";
 
 const PriceCalculation = () => {
   return (
@@ -16,7 +17,7 @@ const PriceCalculation = () => {
             <b>узнайте стоимость кондиционирования для вашего объекта</b>
           </h2>
           <div className={s.priceCalculation__content}>
-            <Quiz />
+            <Quiz steps={quizSteps} />
             <Info />
           </div>
         </div>

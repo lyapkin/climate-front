@@ -1,6 +1,6 @@
 import { useCart } from "@/src/app/providers";
-import Counter from "./Counter";
 import { ProductBase } from "@/src/entities/product";
+import Counter from "@/src/shared/ui/Counter/Counter";
 
 const ChangeCartQunatity = ({ itemId }: ChangeCartQunatityProps) => {
   const { cart, plusItem, minusItem } = useCart();

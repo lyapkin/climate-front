@@ -26,7 +26,7 @@
 }
 .form__comment {
   grid-area: comment;
-  height: 172px;
+  height: 136px;
   width: 100%;
 }
 .form__button {
@@ -55,9 +55,9 @@
     height: 56px;
   }
   .form__comment {
-    height: 96px;
+    height: 88px;
   }
   .form__button {
-    height: 64px;
+    height: 56px;
   }
 }

@@ -14,7 +14,12 @@ import { getCookie } from "@/src/shared/utils";
 import FieldError from "@/src/shared/ui/form/FieldError";
 import { useSucceedFromRequest } from "@/src/shared/utils/client";
 
-const GetConsultation = ({ className, cleanUp = () => {} }: Props) => {
+const GetConsultation = ({
+  className,
+  addOn = "",
+  btnText = "Заказать консультацию",
+  cleanUp = () => {},
+}: Props) => {
   const {
     register,
     handleSubmit,
@@ -25,7 +30,7 @@ const GetConsultation = ({ className, cleanUp = () => {} }: Props) => {
   const submitHandler: SubmitHandler<Form> = async (data) => {
     const url = new URL(
       "requests/consultation/",
-      process.env.NEXT_PUBLIC_API_BASE_URL
+      process.env.NEXT_PUBLIC_API_BASE_URL,
     );
 
     const res = await fetch(url, {
@@ -34,7 +39,7 @@ const GetConsultation = ({ className, cleanUp = () => {} }: Props) => {
         "Content-Type": "application/json",
         "X-CSRFToken": getCookie("csrftoken"),
       },
-      body: JSON.stringify(data),
+      body: JSON.stringify({ ...data, additional_data: addOn }),
     });
 
     if (res.status !== 201) {
@@ -99,7 +104,7 @@ const GetConsultation = ({ className, cleanUp = () => {} }: Props) => {
           className={s.form__button}
           isSending={isSubmitting}
           isSubmited={isSubmitSuccessful}
-          text="Заказать консультацию"
+          text={btnText}
         />
         <Agreement className={s.form__agreement} />
       </form>
@@ -110,6 +115,8 @@ const GetConsultation = ({ className, cleanUp = () => {} }: Props) => {
 interface Props {
   className?: string;
   cleanUp?: () => void;
+  addOn?: string;
+  btnText?: string;
 }
 
 type Form = {

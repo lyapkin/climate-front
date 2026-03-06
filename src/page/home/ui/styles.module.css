@@ -89,7 +89,8 @@
   grid-column: 1 / 2;
   grid-row: 2 / 4;
   z-index: -1;
-  box-shadow: -3.64px 5.82px 15.27px 0px rgba(166, 166, 166, 0.1),
+  box-shadow:
+    -3.64px 5.82px 15.27px 0px rgba(166, 166, 166, 0.1),
     -15.27px 22.55px 27.64px 0px rgba(166, 166, 166, 0.09),
     -34.91px 51.64px 37.09px 0px rgba(166, 166, 166, 0.05),
     -61.82px 91.64px 44.36px 0px rgba(166, 166, 166, 0.01),
@@ -138,7 +139,8 @@
   background-color: #fff;
   border-top-left-radius: 8px;
   border-top-right-radius: 8px;
-  box-shadow: -5px 8px 21px 0px rgba(166, 166, 166, 0.1),
+  box-shadow:
+    -5px 8px 21px 0px rgba(166, 166, 166, 0.1),
     -21px 31px 38px 0px rgba(166, 166, 166, 0.09),
     -48px 71px 51px 0px rgba(166, 166, 166, 0.05),
     -85px 126px 61px 0px rgba(166, 166, 166, 0.01),
@@ -198,8 +200,8 @@
     width: 100%;
   }
   .heroSection {
-    background-image: url("/images/home/hero/bg.png"),
-      linear-gradient(transparent 80%, #fff);
+    background-image:
+      url("/images/home/hero/bg.png"), linear-gradient(transparent 80%, #fff);
   }
 }
 
@@ -321,112 +323,13 @@
 .priceCalculation__content {
   display: flex;
   border-radius: var(--radius3);
-  box-shadow: -5px 8px 21px 0px rgba(166, 166, 166, 0.1),
+  box-shadow:
+    -5px 8px 21px 0px rgba(166, 166, 166, 0.1),
     -21px 31px 38px 0px rgba(166, 166, 166, 0.09),
     -48px 71px 51px 0px rgba(166, 166, 166, 0.05),
     -85px 126px 61px 0px rgba(166, 166, 166, 0.01),
     -133px 197px 66px 0px rgba(166, 166, 166, 0);
   overflow: hidden;
-}
-
-.priceCalculation__quiz {
-  background-color: #f7f7f7;
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
-  flex-grow: 1;
-  padding: 32px 80px;
-}
-.quiz__title {
-  font-weight: 400;
-  font-size: 20px;
-  line-height: 24px;
-  letter-spacing: -0.04em;
-  color: var(--c);
-}
-.quiz__progress {
-  border-radius: 100px;
-  background-color: #fff;
-  height: 32px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-bottom: 24px;
-  position: relative;
-}
-.quiz__progress span {
-  font-weight: 400;
-  font-size: 14px;
-  letter-spacing: -0.04em;
-  color: var(--c60);
-  z-index: 1;
-}
-.quiz__progress::after {
-  content: "";
-  display: block;
-  right: var(--progress);
-  height: 100%;
-  position: absolute;
-  left: 0;
-  top: 0;
-  bottom: 0;
-  background: var(--brand-gradient);
-  border-radius: inherit;
-  transition: right ease-in-out 0.2s;
-}
-.quiz__optionsList {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: repeat(2, auto);
-  gap: 16px;
-}
-.quiz__option {
-  border-radius: var(--radius2);
-  background-color: #fff;
-  box-shadow: -5px 8px 21px 0px rgba(166, 166, 166, 0.1),
-    -21px 31px 38px 0px rgba(166, 166, 166, 0.09),
-    -48px 71px 51px 0px rgba(166, 166, 166, 0.05),
-    -85px 126px 61px 0px rgba(166, 166, 166, 0.01),
-    -133px 197px 66px 0px rgba(166, 166, 166, 0);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 4px;
-}
-.quiz__buttons {
-  display: flex;
-  gap: 16px;
-}
-.quiz__buttons > * {
-  flex-grow: 1;
-}
-.quiz__button {
-  aspect-ratio: 240 / 72;
-}
-.quiz__back {
-  order: 1;
-}
-.quiz__buttons:after {
-  order: 2;
-  content: "";
-  flex-grow: 1;
-  flex-basis: 100%;
-}
-.quiz__forward {
-  order: 3;
-}
-.quiz__optionImg {
-  position: relative;
-  width: 100%;
-  aspect-ratio: 224/156;
-}
-.quiz__optionText {
-  font-weight: 400;
-  font-size: 14px;
-  letter-spacing: -0.04em;
-  color: var(--c);
-  padding-top: 8px;
-  padding-bottom: 4px;
 }
 
 .priceCalculation__info {
@@ -494,9 +397,6 @@
   .priceCalculation__content {
     flex-direction: column;
   }
-  .priceCalculation__quiz {
-    padding: 32px 40px;
-  }
   .priceCalculation__info {
     min-width: initial;
     max-width: initial;
@@ -507,12 +407,15 @@
     grid-template-rows: auto 1fr;
   }
 }
-@media (max-width: 900px) {
-  .quiz__optionsList {
-    grid-template-columns: repeat(2, 1fr);
+@media (max-width: 960px) {
+  .priceCalculation__content {
+    transform: scaleX(1.11);
   }
-  .quiz__buttons::after {
-    content: none;
+  .priceCalculation__content > * > * {
+    transform: scaleX(0.89);
+  }
+  .priceCalculation__info {
+    padding: 32px 0;
   }
 }
 @media (max-width: 760px) {
@@ -523,23 +426,6 @@
       "img";
     grid-template-columns: 1fr;
     grid-template-rows: initial;
-  }
-}
-@media (max-width: 560px) {
-  .priceCalculation__content {
-    transform: scaleX(1.11);
-  }
-  .priceCalculation__content > * > * {
-    transform: scaleX(0.89);
-  }
-  .priceCalculation__quiz,
-  .priceCalculation__info {
-    padding: 32px 0;
-  }
-}
-@media (max-width: 460px) {
-  button.quiz__button {
-    font-size: 12px;
   }
 }
 
@@ -669,7 +555,8 @@
   align-items: center;
   justify-content: center;
   background: linear-gradient(249.33deg, #ffffff 4.4%, #f6f6f6 104.8%);
-  box-shadow: -85px 126px 61px rgba(166, 166, 166, 0.01),
+  box-shadow:
+    -85px 126px 61px rgba(166, 166, 166, 0.01),
     -48px 71px 51px rgba(166, 166, 166, 0.05),
     -21px 31px 38px rgba(166, 166, 166, 0.09),
     -5px 8px 21px rgba(166, 166, 166, 0.1);
@@ -740,7 +627,8 @@
   content: "";
   position: absolute;
   top: 0;
-  background: radial-gradient(
+  background:
+    radial-gradient(
       closest-side ellipse at 51% 63%,
       rgba(0, 0, 0, 0.08) 0%,
       rgb(0 0 0 / 0%) 100%

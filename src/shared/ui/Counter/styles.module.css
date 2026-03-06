@@ -10,7 +10,8 @@
 
 .counter__minus,
 .counter__plus {
-  flex-basis: 33%;
+  /* flex-basis: 33%; */
+  aspect-ratio: 1/1;
   font-size: inherit;
   height: 102%;
   position: relative;
@@ -27,4 +28,13 @@
   justify-content: center;
   color: #fff;
   font-size: inherit;
+}
+
+.counter__count {
+}
+
+.counter__input {
+  font-size: inherit;
+  color: #fff;
+  text-align: center;
 }

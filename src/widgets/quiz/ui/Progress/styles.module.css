@@ -1,0 +1,30 @@
+.quiz__progress {
+  border-radius: 100px;
+  background-color: #fff;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 24px;
+  position: relative;
+}
+.quiz__progress span {
+  font-weight: 400;
+  font-size: 14px;
+  letter-spacing: -0.04em;
+  color: var(--c60);
+  z-index: 1;
+}
+.quiz__progress::after {
+  content: "";
+  display: block;
+  right: var(--progress);
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  background: var(--brand-gradient);
+  border-radius: inherit;
+  transition: right ease-in-out 0.2s;
+}

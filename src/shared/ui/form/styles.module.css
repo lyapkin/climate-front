@@ -253,7 +253,7 @@
   .inputField input,
   .textareaField textarea,
   .fileField {
-    padding: 20px 24px;
+    padding: 16px 16px;
   }
   .fileField input {
     padding: 0;

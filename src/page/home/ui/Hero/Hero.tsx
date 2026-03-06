@@ -4,6 +4,7 @@ import cn from "classnames";
 import HeroSlider from "./HeroSlider";
 import HeroBullets from "./HeroBullets";
 import { Rating } from "@/src/widgets/review";
+import Link from "next/link";
 
 const Hero = ({ title }: HeroProps) => {
   return (
@@ -22,9 +23,11 @@ const Hero = ({ title }: HeroProps) => {
             </p>
           </div>
           <div className={s.hero__cta}>
-            <Button className={s.hero__ctaButton}>
-              Рассчитать стоимость кондиционера
-            </Button>
+            <Link href={"/#calculation"}>
+              <Button className={s.hero__ctaButton}>
+                Рассчитать стоимость кондиционера
+              </Button>
+            </Link>
           </div>
           <HeroSlider />
           <HeroBullets />

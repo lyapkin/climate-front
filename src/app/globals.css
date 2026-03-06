@@ -10,7 +10,8 @@
   --radius1: 4px;
   --radius2: 8px;
   --radius3: 20px;
-  --brand-shadow: inset 0px 4px 4.8px #83d9fa, inset 0px -4px 5.7px #2da0cd,
+  --brand-shadow:
+    inset 0px 4px 4.8px #83d9fa, inset 0px -4px 5.7px #2da0cd,
     0px 34px 38px -28px rgba(94, 200, 242, 0.7);
 }
 
@@ -25,6 +26,7 @@ body {
 html {
   /* scrollbar-gutter: stable; */
   /* overflow-x: hidden; */
+  scroll-behavior: smooth;
 }
 
 body {

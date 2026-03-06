@@ -39,7 +39,7 @@ const Counter = ({
       >
         <input
           className={s.counter__input}
-          value={String(val) + unit}
+          value={String(val) + (unit || "")}
           onChange={(e) => {
             setValue(e.target.value.replace(/\D/g, ""));
           }}

@@ -9,6 +9,7 @@ import { Scrollable } from "@/src/shared/ui/scrollable";
 
 const ServicesContent = ({ data }: ServicesContentProps) => {
   const [currentService, setCurrentService] = useState(0);
+  console.log(data);
 
   return (
     <div className={s.content}>
@@ -41,10 +42,12 @@ const ServicesContent = ({ data }: ServicesContentProps) => {
           расскажите нам о ней.
         </div>
       </div>
-      <Options
-        key={data[currentService].id}
-        data={data[currentService].options}
-      />
+      {data[currentService].options.length > 0 && (
+        <Options
+          key={data[currentService].id}
+          data={data[currentService].options}
+        />
+      )}
     </div>
   );
 };

@@ -19,7 +19,7 @@ const ProductCard = ({ product }: ProductCardProps) => {
           <Image
             src={product.img || "/images/noimage.jpg"}
             fill
-            style={{ objectFit: "cover" }}
+            style={{ objectFit: "contain" }}
             alt={product.name}
           />
           <Stock stock={product.stock} />

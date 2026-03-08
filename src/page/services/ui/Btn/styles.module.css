@@ -1,0 +1,21 @@
+.btn {
+  padding: 24px 56px;
+  border-radius: var(--radius2);
+  background-color: #fff;
+  font-weight: 700;
+  font-size: 12px;
+  text-transform: uppercase;
+  width: auto;
+  white-space: nowrap;
+}
+
+.btn_active {
+  background: #1a5971;
+  color: #fff;
+}
+
+@media (max-width: 900px) {
+  .btn {
+    padding: 16px 24px;
+  }
+}

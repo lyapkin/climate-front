@@ -1,80 +1,47 @@
 "use client";
 import React, { useState } from "react";
 import { Service } from "../model";
-import ServiceItem from "./ServiceItem";
 import s from "./styles.module.css";
-import OptionsList from "./OptionsList";
 import Image from "next/image";
+import Options from "./Options/Options";
+import Btn from "./Btn/Btn";
+import { Scrollable } from "@/src/shared/ui/scrollable";
 
 const ServicesContent = ({ data }: ServicesContentProps) => {
   const [currentService, setCurrentService] = useState(0);
-  // const [scrolled, setScrolled] = useState(0);
 
-  // const ref = useRef<HTMLDivElement>(null);
-  // const handleScroll = (e: React.UIEvent<HTMLDivElement, UIEvent>) => {
-  //   if (e.target instanceof Element) {
-  //     const scrolled = e.target.scrollLeft;
-  //     setScrolled(scrolled);
-  //   }
-  // };
-  // const handleScrollLeft = () => {
-  //   if (ref && ref.current) {
-  //     ref.current.scrollLeft = ref.current.scrollLeft - 100;
-  //   }
-  // };
-  // const handleScrollRight = () => {
-  //   if (ref && ref.current) {
-  //     ref.current.scrollLeft = ref.current.scrollLeft + 100;
-  //   }
-  // };
   return (
     <div className={s.content}>
-      {/* {scrolled !== 0 && (
-        <button
-          className={s.servicesList__leftButton}
-          onClick={handleScrollLeft}
-        ></button>
-      )}
-      {scrolled + ref.current?.parentElement?.offsetWidth ===
-        ref.current?.offsetWidth && (
-        <button
-          className={s.servicesList__rightButton}
-          onClick={handleScrollRight}
-        ></button>
-      )} */}
-      <div
-        className={s.content__servicesList}
-        // ref={ref}
-        // onScroll={handleScroll}
-      >
-        {data.map((item, i) => {
-          return (
-            <ServiceItem
-              key={item.id}
-              service={item}
-              active={currentService === i}
-              onClick={() => setCurrentService(i)}
-            />
-          );
-        })}
-      </div>
+      <Scrollable orientation="horizontal" className={s.content__services}>
+        <div className={s.content__servicesList}>
+          {data.map((item, i) => {
+            return (
+              <Btn
+                key={item.id}
+                active={currentService === i}
+                onClick={() => setCurrentService(i)}
+              >
+                {item.name}
+              </Btn>
+            );
+          })}
+        </div>
+      </Scrollable>
       <div className={s.content__card}>
         <div className={s.card__img}>
           <Image
-            src={data[currentService].img}
-            alt={data[currentService].name}
+            src={"/images/services/1.webp"}
+            alt={""}
             fill
             style={{ objectFit: "cover" }}
           />
         </div>
-        <div
-          className={s.card__text}
-          dangerouslySetInnerHTML={{
-            __html: data[currentService].description,
-          }}
-        />
+        <div className={s.card__text}>
+          Мы найдём качественное инженерное решение для любой задачи. Просто
+          расскажите нам о ней.
+        </div>
       </div>
-      <OptionsList
+      <Options
         key={data[currentService].id}
         data={data[currentService].options}
       />

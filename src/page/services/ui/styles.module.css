@@ -14,21 +14,20 @@
   display: grid;
   grid-template-areas:
     "services services"
-    "card parts"
-    "card sum";
+    "card options";
   grid-template-columns: auto 1fr;
-  grid-template-rows: auto 1fr auto;
+  grid-template-rows: auto 1fr;
   row-gap: 56px;
   column-gap: 80px;
   position: relative;
 }
-
-.content__servicesList {
+.content__services {
   grid-area: services;
+  min-width: 0;
+}
+.content__servicesList {
   display: flex;
   gap: 16px;
-  overflow: auto;
-  scrollbar-width: none;
 }
 .content__card {
   grid-area: card;
@@ -36,79 +35,7 @@
   border-radius: var(--radius3);
   background-color: #fff;
   overflow: hidden;
-}
-.content__partsList {
-  grid-area: parts;
-}
-.content__partsSum {
-  grid-area: sum;
-  display: flex;
-  justify-content: space-between;
-  color: #fff;
-  font-weight: 600;
-  font-size: 24px;
-}
-
-.content__serviceItem {
-  padding: 24px 56px;
-  border-radius: var(--radius2);
-  background-color: #fff;
-  font-weight: 700;
-  font-size: 12px;
-  text-transform: uppercase;
-  width: auto;
-  white-space: nowrap;
-}
-.content__serviceItem_active {
-  background: var(--brand-gradient);
-  color: #fff;
-}
-
-.content__partsList {
-  display: flex;
-  flex-direction: column;
-}
-.content__partsItem {
-  color: #fff;
-  display: flex;
-  align-items: center;
-  gap: 16px;
-  cursor: pointer;
-}
-.content__partsItem input {
-  position: absolute;
-  display: inline-block;
-  width: 0;
-  height: 0;
-  overflow: hidden;
-}
-.content__partsItem::before {
-  content: "";
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 16px;
-  height: 16px;
-  background-color: #fff;
-  border: 1px solid #e3e1dd;
-  border-radius: var(--radius1);
-  color: #fff;
-  padding: 4px;
-}
-.content__partsItem:has(input:checked)::before {
-  content: "\2713";
-  background-color: var(--main-color);
-  border-color: var(--main-color);
-}
-.partsItem__name {
-  height: 100%;
-  padding: 16px 0;
-  border-bottom: 1px solid #8bdcf8;
-  flex-basis: 70%;
-}
-.partsItem__price {
-  text-align: right;
-  flex-grow: 1;
+  align-self: start;
 }
 
 .card__img {
@@ -120,44 +47,24 @@
   padding: 24px;
   display: flex;
   flex-direction: column;
+  justify-content: center;
   gap: 24px;
+
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 1.5em;
+  text-align: center;
+  letter-spacing: -0.04em;
 }
-.servicesList__leftButton,
-.servicesList__rightButton {
-  position: absolute;
-  top: -0.5px;
-  height: 48px;
-  width: 48px;
-}
-.servicesList__leftButton {
-  left: 0;
-  background-image: linear-gradient(-90deg, transparent, var(--main-color));
-}
-.servicesList__leftButton::after {
-  position: relative;
-  left: -10px;
-  content: "\25C0";
-  color: #fff;
-}
-.servicesList__rightButton {
-  right: 0;
-  background-image: linear-gradient(90deg, transparent, var(--main-color));
-}
-.servicesList__rightButton::after {
-  position: relative;
-  right: -10px;
-  content: "\25B6";
-  color: #fff;
-}
+
 @media (max-width: 1120px) {
   .content {
     display: grid;
     grid-template-areas:
-      "services services"
-      "card card"
-      "parts parts"
-      "sum sum";
-    grid-template-columns: auto 1fr;
+      "services"
+      "options"
+      "card";
+    grid-template-columns: auto;
     grid-template-rows: auto 1fr auto;
     row-gap: 56px;
     column-gap: 80px;
@@ -179,9 +86,6 @@
   .services__title {
     font-size: 20px;
   }
-  .content__serviceItem {
-    padding: 16px 40px;
-  }
   .card__img {
     min-width: 296px;
     min-height: 256px;
@@ -196,20 +100,5 @@
   }
   .card__img {
     min-height: 196px;
-  }
-  .content__partsItem::before {
-    width: 12px;
-    height: 12px;
-    padding: 0;
-  }
-  .partsItem__name {
-    font-size: 14px;
-  }
-  .partsItem__price {
-    font-size: 14px;
-    width: 72px;
-  }
-  .content__partsSum {
-    font-size: 18px;
   }
 }

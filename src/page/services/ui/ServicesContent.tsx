@@ -9,7 +9,6 @@ import { Scrollable } from "@/src/shared/ui/scrollable";
 
 const ServicesContent = ({ data }: ServicesContentProps) => {
   const [currentService, setCurrentService] = useState(0);
-  console.log(data);
 
   return (
     <div className={s.content}>

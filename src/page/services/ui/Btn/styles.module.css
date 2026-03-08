@@ -10,8 +10,12 @@
 }
 
 .btn_active {
-  background: #1a5971;
+  background: #227797;
   color: #fff;
+  box-shadow:
+    inset 0px -4px 5.7px 0px #1a5d76,
+    inset 0px 4px 4.8px 0px #2b94bb,
+    0px 7px 14.6px 0px #00000026;
 }
 
 @media (max-width: 900px) {

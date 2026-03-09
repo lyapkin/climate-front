@@ -12,7 +12,7 @@ const ProductAttrs = ({ attrs, stock, className }: ProductAttrsProps) => {
           {item.values.map((val, i) => (
             <span className={s.attrs__valueItem} key={val.id}>
               {val.name}
-              {i !== item.values.length - 1 ? "; " : null}
+              {i !== item.values.length - 1 ? "/" : null}
             </span>
           ))}
           {item.attr.unit && (

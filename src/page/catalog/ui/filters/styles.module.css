@@ -2,7 +2,8 @@
   position: relative;
   background-color: #fbfbfb;
   border-radius: var(--radius1);
-  box-shadow: -5px 8px 21px 0px rgba(166, 166, 166, 0.1),
+  box-shadow:
+    -5px 8px 21px 0px rgba(166, 166, 166, 0.1),
     -21px 31px 38px 0px rgba(166, 166, 166, 0.09),
     -48px 71px 51px 0px rgba(166, 166, 166, 0.05),
     -85px 126px 61px 0px rgba(166, 166, 166, 0.01),
@@ -24,6 +25,7 @@
   color: #7b8990;
   display: flex;
   align-items: center;
+  text-align: left;
 }
 
 .filter__list {
@@ -48,7 +50,8 @@
   height: 52px;
   min-height: 52px;
   padding-right: 8px;
-  box-shadow: -5px 8px 21px 0px rgba(166, 166, 166, 0.1),
+  box-shadow:
+    -5px 8px 21px 0px rgba(166, 166, 166, 0.1),
     -21px 31px 38px 0px rgba(166, 166, 166, 0.09),
     -48px 71px 51px 0px rgba(166, 166, 166, 0.05),
     -85px 126px 61px 0px rgba(166, 166, 166, 0.01),

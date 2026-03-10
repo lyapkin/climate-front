@@ -12,7 +12,7 @@ const BlogSection = () => {
       <div className="container">
         <div className={s.blog}>
           <h2 className={cn(s.blog__title, "section-title")}>
-            Читайте интересные статьи в нашем блоге и следите за новостями
+            Посмотрите на работы выполненные нашими мастерами
           </h2>
           <Rubrics getRubricApi={getBlogRubricsApi} className={s.blog__rubrics}>
             <Suspense>

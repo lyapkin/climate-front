@@ -14,13 +14,10 @@ const Header = async () => {
           <MobileMenu className={s.header__mobile} contacts={contacts} />
           <Logo className={s.header__logo} />
           <Nav className={s.header__nav}>
-            <NavItem link={"/blog/?rubric=1"} className={s.header__navItem}>
+            <NavItem link={"/blog/"} className={s.header__navItem}>
               Наши работы
             </NavItem>
             <NavItem link={"/services/"} className={s.header__navItem}>
-              Услуги
-            </NavItem>
-            <NavItem link={"/prices/"} className={s.header__navItem}>
               Цены
             </NavItem>
             <NavItem link={"/reviews/"} className={s.header__navItem}>

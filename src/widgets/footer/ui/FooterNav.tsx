@@ -7,13 +7,10 @@ const FooterNav = () => {
     <div className={s.footer__nav}>
       <FooterList title="Сайт">
         <Nav className={s.footer__list}>
-          <NavItem link={"/blog/?rubric=1"} className={s.footer__listItem}>
+          <NavItem link={"/blog/"} className={s.footer__listItem}>
             Наши работы
           </NavItem>
           <NavItem link={"/services/"} className={s.footer__listItem}>
-            Услуги
-          </NavItem>
-          <NavItem link={"/prices/"} className={s.footer__listItem}>
             Цены
           </NavItem>
           <NavItem link={"/reviews/"} className={s.footer__listItem}>
@@ -24,9 +21,6 @@ const FooterNav = () => {
           </NavItem>
           <NavItem link={"/catalog/"} className={s.footer__listItem}>
             Каталог
-          </NavItem>
-          <NavItem link={"/#calculation"} className={s.footer__listItem}>
-            Рассчет стоимости
           </NavItem>
           <NavItem link={"/contacts/"} className={s.footer__listItem}>
             Контакты

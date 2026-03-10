@@ -18,6 +18,7 @@ const Home = async () => {
         <Hero title={page.title} />
         <PriceCalculation />
         <CatalogSection />
+        <BlogSection />
         <Logos />
         <ReviewSection />
         <div className="bluebg">
@@ -28,7 +29,6 @@ const Home = async () => {
         </div>
       </main>
       <Contact />
-      <BlogSection />
     </>
   );
 };

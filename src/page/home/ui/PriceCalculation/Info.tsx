@@ -17,12 +17,8 @@ const Info = () => {
         <p className={s.info__position}>Директор компании</p>
       </div>
       <p className={s.info__text}>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla quam
-        velit, vulputate eu pharetra nec, mattis ac neque. Duis vulputate
-        commodo lectus, ac blandit elit tincidunt id. Sed rhoncus, tortor sed
-        eleifend tristique, tortor mauris molestie elit, et lacinia ipsum quam
-        nec dui. Quisque nec mauris sit amet elit iaculis pretium sit amet quis
-        magna.
+        10 лет мы со своей командой помогаем сделать ваши дома и офисы более
+        комфортным
       </p>
       <div className={s.info__img}>
         <Image

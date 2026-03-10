@@ -5,6 +5,7 @@ import { useEffect } from "react";
 import { Rubric } from "../model";
 import { useRubrics } from "../providers";
 import RubricButton from "./RubricButton";
+import { Scrollable } from "@/src/shared/ui/scrollable";
 
 const RubricsList = ({ rubrics }: RubricsListProps) => {
   const { currentRubric, handleChange, all } = useRubrics();
@@ -29,21 +30,23 @@ const RubricsList = ({ rubrics }: RubricsListProps) => {
   });
 
   return (
-    <ul className={s.rubrics}>
-      {all && (
-        <li
-          className={cn(s.rubrics__item, {
-            [s.rubrics__item_active]: currentRubric === null,
-          })}
-        >
-          <RubricButton
-            type={{ id: null, name: "Все" }}
-            handleChange={handleChange}
-          />
-        </li>
-      )}
-      {content}
-    </ul>
+    <Scrollable orientation="horizontal">
+      <ul className={s.rubrics}>
+        {all && (
+          <li
+            className={cn(s.rubrics__item, {
+              [s.rubrics__item_active]: currentRubric === null,
+            })}
+          >
+            <RubricButton
+              type={{ id: null, name: "Все" }}
+              handleChange={handleChange}
+            />
+          </li>
+        )}
+        {content}
+      </ul>
+    </Scrollable>
   );
 };
 

@@ -3,7 +3,6 @@
   display: flex;
   justify-content: space-between;
   box-sizing: content-box;
-  cursor: pointer;
 }
 .stars span {
   clip-path: url(#star-rating);

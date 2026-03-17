@@ -4,12 +4,12 @@
   grid-template-rows: auto;
   grid-template-areas:
     "date rating"
-    "img img"
     "text text"
     "name name";
   row-gap: 24px;
   align-items: center;
-  box-shadow: -5px 8px 21px 0px rgba(166, 166, 166, 0.1),
+  box-shadow:
+    -5px 8px 21px 0px rgba(166, 166, 166, 0.1),
     -21px 31px 38px 0px rgba(166, 166, 166, 0.09),
     -48px 71px 51px 0px rgba(166, 166, 166, 0.05),
     -85px 126px 61px 0px rgba(166, 166, 166, 0.01),
@@ -51,12 +51,12 @@
   line-height: 22px;
   letter-spacing: -0.04em;
   color: var(--c40);
-  height: 176px;
+  height: 312px;
   overflow: hidden;
   -webkit-box-orient: vertical;
   display: -webkit-box;
-  -webkit-line-clamp: 8;
-  line-clamp: 8;
+  -webkit-line-clamp: 14;
+  line-clamp: 14;
   text-overflow: ellipsis;
 }
 .card__name {

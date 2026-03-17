@@ -6,11 +6,16 @@ import cn from "classnames";
 const CustomLink = ({
   children,
   className,
+  target,
   variant = "primary",
   ...rest
 }: CustomLinkProps) => {
   return (
-    <Link className={cn(s.link, className, s[`link__${variant}`])} {...rest}>
+    <Link
+      className={cn(s.link, className, s[`link__${variant}`])}
+      target={target ? target : ""}
+      {...rest}
+    >
       {children}
     </Link>
   );
@@ -18,6 +23,7 @@ const CustomLink = ({
 
 interface CustomLinkProps extends LinkProps, HTMLAttributes<HTMLAnchorElement> {
   variant?: "primary" /* | "secondary"*/;
+  target?: "_blank";
 }
 
 export default CustomLink;

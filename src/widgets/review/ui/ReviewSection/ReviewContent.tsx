@@ -1,28 +1,13 @@
 "use client";
-import { ReviewCard, useReviews } from "@/src/entities/review";
+import { Review, ReviewCard } from "@/src/entities/review";
 import s from "./styles.module.css";
-import { Skeleton } from "@/src/shared/ui/loading";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { ArrowButton } from "@/src/shared/ui";
 import { Navigation } from "swiper/modules";
 import "swiper/css";
 
-const ReviewContent = () => {
-  const { data, isError, isPending } = useReviews();
-
-  if (isError) {
-    return "Что-то пошло не так";
-  }
-
-  if (isPending) {
-    return (
-      <div className={s.review__content}>
-        <Skeleton />
-      </div>
-    );
-  }
-
-  const content = data.map((item) => {
+const ReviewContent = ({ reviews }: Props) => {
+  const content = reviews.map((item) => {
     return (
       <SwiperSlide key={item.id}>
         <ReviewCard review={item} />
@@ -71,5 +56,9 @@ const ReviewContent = () => {
     </>
   );
 };
+
+interface Props {
+  reviews: Review[];
+}
 
 export default ReviewContent;

@@ -1,8 +1,7 @@
 export type Review = {
   id: number;
-  date: string;
-  rate: number;
-  img: string;
+  createdAt: number;
+  score: number;
   text: string;
-  name: string;
+  sender?: { name: string };
 };

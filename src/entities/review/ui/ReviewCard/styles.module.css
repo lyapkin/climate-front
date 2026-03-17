@@ -58,6 +58,7 @@
   -webkit-line-clamp: 14;
   line-clamp: 14;
   text-overflow: ellipsis;
+  white-space: pre-line;
 }
 .card__name {
   grid-area: name;

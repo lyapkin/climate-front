@@ -16,7 +16,7 @@
 .review__rating {
   grid-area: rating;
   justify-self: end;
-  z-index: 1;
+  z-index: 2;
 }
 .review__content {
   grid-area: content;

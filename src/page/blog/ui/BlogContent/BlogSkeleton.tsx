@@ -1,4 +1,4 @@
-import { PostCardSkeleton } from "@/src/entities/post";
+import { PostCardSkeleton } from "@/src/entities/post/ui";
 import { emptyArr } from "@/src/shared/utils";
 
 const BlogSkeleton = () => {

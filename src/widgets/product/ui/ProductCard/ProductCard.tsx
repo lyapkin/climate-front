@@ -3,12 +3,9 @@ import s from "./styles.module.css";
 import Image from "next/image";
 import Discount from "./Discount";
 import Stock from "./Stock";
-import {
-  ProductAttrs,
-  ProductPreview,
-  ResultPrice,
-} from "@/src/entities/product";
 import AddToCart from "@/src/features/cart/AddToCart/AddToCart";
+import { ProductAttrs, ResultPrice } from "@/src/entities/product/ui";
+import { ProductPreview } from "@/src/entities/product/model";
 
 const ProductCard = ({ product }: ProductCardProps) => {
   return (

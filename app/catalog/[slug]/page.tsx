@@ -3,6 +3,11 @@ import { getCategoryApi } from "@/src/entities/category/api";
 import { Catalog } from "@/src/page/catalog";
 import { Breadcrumbs, BreadcrumbsItem } from "@/src/widgets/breadcrumbs";
 import { Metadata, ResolvingMetadata } from "next";
+import { notFound } from "next/navigation";
+
+export async function generateStaticParams() {
+  return [{ slug: "__placeholder__" }];
+}
 
 const CatalogPage = async ({
   params,
@@ -10,6 +15,9 @@ const CatalogPage = async ({
   params: Promise<{ slug: string }>;
 }) => {
   const { slug } = await params;
+  if (slug === "__placeholder__") {
+    notFound();
+  }
   const cat = await getCategoryApi(slug);
 
   const jsonLdBreadcrumbs = {
@@ -72,7 +80,7 @@ export const generateMetadata = async (
     params: Promise<{ slug: string }>;
     searchParams: Promise<{ [key: string]: string | string[] | undefined }>;
   },
-  parent: ResolvingMetadata
+  parent: ResolvingMetadata,
 ): Promise<Metadata> => {
   const { slug } = await params;
   const searchParamsData = await searchParams;
@@ -82,6 +90,6 @@ export const generateMetadata = async (
     parent,
     `catalog/${slug}/`,
     page.metadata,
-    searchParamsData
+    searchParamsData,
   );
 };

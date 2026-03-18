@@ -3,8 +3,9 @@ import { useState } from "react";
 import s from "./styles.module.css";
 import "@/src/shared/styles/ck.css";
 import { ProductDocs } from "./ProductDocs";
-import { ProductAttrs, ProductDetail } from "@/src/entities/product";
 import cn from "classnames";
+import { ProductAttrs } from "@/src/entities/product/ui";
+import { ProductDetail } from "@/src/entities/product/model";
 
 const ProductInfo = ({ product }: ProductInfoProps) => {
   const [shown, setShown] = useState(0);

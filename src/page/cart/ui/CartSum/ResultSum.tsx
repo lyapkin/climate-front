@@ -1,11 +1,8 @@
 import { ProductBase } from "@/src/entities/product/model/types";
 import s from "./styles.module.css";
 import { useCart } from "@/src/app/providers/CartProvider/CartProvider";
-import {
-  applyDiscountToPrice,
-  FullPrice,
-  ResultPrice,
-} from "@/src/entities/product";
+import { applyDiscountToPrice } from "@/src/entities/product/utils";
+import { FullPrice, ResultPrice } from "@/src/entities/product/ui";
 
 const ResultSum = ({ data }: ResultSumProps) => {
   const { cart } = useCart();
@@ -19,14 +16,14 @@ const ResultSum = ({ data }: ResultSumProps) => {
       if (product) {
         const resultPrice = applyDiscountToPrice(
           product.price,
-          product.discount
+          product.discount,
         );
         sum = sum + resultPrice * quantity;
         fullPrice = fullPrice + product.price * quantity;
       }
       return sum;
     },
-    0
+    0,
   );
   return (
     <>

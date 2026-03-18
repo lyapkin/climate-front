@@ -1,6 +1,7 @@
 import { GetConsultation } from "@/src/features/consultation";
 import s from "./styles.module.css";
 import cn from "classnames";
+import { Suspense } from "react";
 
 const Contact = () => {
   return (
@@ -14,7 +15,9 @@ const Contact = () => {
             Оставьте заявку и мы сформируем для вас лучшее предложение{" "}
             <b>в течение 20 минут</b>
           </p>
-          <GetConsultation className={s.contact__form} />
+          <Suspense>
+            <GetConsultation className={s.contact__form} />
+          </Suspense>
         </div>
       </div>
     </section>

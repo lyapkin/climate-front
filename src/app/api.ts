@@ -1,8 +1,12 @@
-import { backFetch } from "../shared/api";
 import { Sitemap } from "./types";
 
 export const getSitemapApi = async (): Promise<Sitemap> => {
-  const response = await backFetch("metadata/sitemap/_/");
+  const url = new URL(
+    "metadata/sitemap/_/",
+    process.env.NEXT_PUBLIC_API_BASE_URL,
+  );
 
-  return response.json();
+  const res = await fetch(url);
+
+  return res.json();
 };

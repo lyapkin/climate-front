@@ -5,10 +5,10 @@ import { CatalogSection } from "./CatalogSection";
 import { Logos } from "./Logos";
 import { ReviewSection } from "@/src/widgets/review";
 import About from "./About/About";
-import { Promo } from "@/src/widgets/promo";
 import { Contact } from "@/src/widgets/consultation";
 import { BlogSection } from "@/src/widgets/blog";
 import { Suspense } from "react";
+import { Promo } from "@/src/widgets/promo/ui";
 
 const Home = async () => {
   const page = await getPageApi("home");

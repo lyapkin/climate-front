@@ -4,11 +4,15 @@ import s from "./styles.module.css";
 import cn from "classnames";
 import { Rating } from "../Rating";
 import { getReviewApi } from "@/src/entities/review/api";
+import { revalidateTag } from "next/cache";
 
 const ReviewSection = async () => {
   const reviews = await getReviewApi();
 
-  if (reviews.length === 0) return null;
+  if (reviews.length === 0) {
+    revalidateTag("reviews", { expire: 0 });
+    return null;
+  }
 
   return (
     <section className={cn(s.reviewSection, "section")}>

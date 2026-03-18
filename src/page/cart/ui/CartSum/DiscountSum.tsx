@@ -1,7 +1,7 @@
 import { ProductBase } from "@/src/entities/product/model/types";
 import s from "./styles.module.css";
 import { useCart } from "@/src/app/providers/CartProvider/CartProvider";
-import { applyDiscountToPrice } from "@/src/entities/product";
+import { applyDiscountToPrice } from "@/src/entities/product/utils";
 
 const DiscountSum = ({ data }: DiscountSumProps) => {
   const { cart } = useCart();
@@ -13,7 +13,7 @@ const DiscountSum = ({ data }: DiscountSumProps) => {
       if (product) {
         const resultPrice = applyDiscountToPrice(
           product.price,
-          product.discount
+          product.discount,
         );
 
         sum =

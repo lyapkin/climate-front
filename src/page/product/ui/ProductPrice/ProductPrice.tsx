@@ -1,8 +1,8 @@
 import s from "./styles.module.css";
 import { ProductDetail } from "@/src/entities/product/model/types";
-import { FullPrice, ResultPrice } from "@/src/entities/product";
 import { HTMLAttributes } from "react";
 import cn from "classnames";
+import { FullPrice, ResultPrice } from "@/src/entities/product/ui";
 
 const ProductPrice = ({ price, discount, className }: ProductPriceProps) => {
   return (

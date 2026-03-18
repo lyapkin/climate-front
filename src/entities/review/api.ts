@@ -1,12 +1,16 @@
 import { getAvitoTokenApi } from "@/src/shared/integrations/avito/api/getTokenApi";
 import { Review } from "./model/types";
+import { cacheLife, cacheTag } from "next/cache";
 
 export const getReviewApi = async (): Promise<Review[]> => {
+  "use cache";
+  cacheTag("reviews");
   if (process.env.ENV === "dev") return devReviews;
 
   const token = await getAvitoTokenApi();
 
   if (!token.success) {
+    cacheLife({ revalidate: 0, stale: 0 });
     return [];
   }
 
@@ -24,7 +28,6 @@ export const getReviewApi = async (): Promise<Review[]> => {
       const data = await res.json();
       console.log("Неудачный запрос отзывов 400");
       console.log(`${data.error.code} - ${data.error.message}`);
-      return [];
     }
 
     if (res.status === 401) {
@@ -40,6 +43,7 @@ export const getReviewApi = async (): Promise<Review[]> => {
     }
 
     if (res.status === 200) {
+      cacheLife({ revalidate: 604800, stale: 604800 });
       const data: Response = await res.json();
 
       return data.reviews.filter(
@@ -52,6 +56,8 @@ export const getReviewApi = async (): Promise<Review[]> => {
   } catch (err) {
     console.log(err);
   }
+
+  cacheLife({ revalidate: 0, stale: 0 });
 
   return [];
 };

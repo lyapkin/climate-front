@@ -1,6 +1,6 @@
 import { useQuery } from "@tanstack/react-query";
-import { getPostsApi } from "../api";
 import { useBlogParams } from "./useBlogParams";
+import { getPostsApi } from "../api/getPostsApi";
 
 export const usePostsList = () => {
   const { category, page } = useBlogParams();

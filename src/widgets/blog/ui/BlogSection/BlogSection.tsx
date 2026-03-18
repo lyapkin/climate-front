@@ -2,9 +2,9 @@ import s from "./styles.module.css";
 import cn from "classnames";
 import CustomLink from "@/src/shared/ui/CustomLink/CustomLink";
 import { Rubrics } from "@/src/features/rubric";
-import { getBlogRubricsApi } from "../../api";
 import { Suspense } from "react";
 import BlogContent from "./BlogContent";
+import { getBlogRubricsApi } from "../../api/getBlogRubricsApi";
 
 const BlogSection = () => {
   return (

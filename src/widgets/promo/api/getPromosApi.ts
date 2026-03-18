@@ -1,16 +1,7 @@
-import { backFetch } from "@/src/shared/api";
 import { Promo } from "../model";
 
 export const getPromosApi = async (): Promise<Promo[]> => {
-  const res = await backFetch("promo/promos/");
+  const url = new URL("promo/promos/", process.env.NEXT_PUBLIC_API_BASE_URL);
+  const res = await fetch(url);
   return await res.json();
-  return [
-    {
-      id: 1,
-      name: "-25% на установку + бесплатное обслуживание",
-      date: "2025-09-10",
-      text: "Оформите заявку на водонагреватель BOSH до 10.09.2023",
-      img: "/images/promo/1.png",
-    },
-  ];
 };

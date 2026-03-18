@@ -1,12 +1,12 @@
 "use client";
 import { usePostsList } from "../../utils";
-import { PostCard } from "@/src/entities/post";
 import s from "./styles.module.css";
 import { Skeleton } from "@/src/shared/ui/loading";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { ArrowButton } from "@/src/shared/ui";
 import { Navigation } from "swiper/modules";
 import "swiper/css";
+import { PostCard } from "@/src/entities/post/ui";
 
 const BlogContent = () => {
   const { data, isPending, isError } = usePostsList();

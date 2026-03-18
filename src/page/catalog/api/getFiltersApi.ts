@@ -1,7 +1,7 @@
-import { backFetch } from "@/src/shared/api";
+import { cacheTag } from "next/cache";
 
 export const getFiltersApi = async (
-  categoryId?: number
+  categoryId?: number,
 ): Promise<{
   attrs: {
     id: number;
@@ -11,8 +11,13 @@ export const getFiltersApi = async (
   }[];
   price: { min: number; max: number };
 }> => {
-  const res = await backFetch(
-    `catalog/filters/${categoryId ? categoryId + "/" : ""}`
+  "use cache";
+  cacheTag("catalog");
+
+  const url = new URL(
+    `catalog/filters/${categoryId ? categoryId + "/" : ""}`,
+    process.env.NEXT_PUBLIC_API_BASE_URL,
   );
+  const res = await fetch(url);
   return await res.json();
 };

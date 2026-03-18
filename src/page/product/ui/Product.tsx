@@ -4,7 +4,8 @@ import { Contact } from "@/src/widgets/consultation";
 import s from "./styles.module.css";
 import Bullets from "./Bullets";
 import ProductContent from "./ProductContent";
-import { ProductDetail } from "@/src/entities/product";
+import { ProductDetail } from "@/src/entities/product/model";
+import { Suspense } from "react";
 
 const Product = async ({ product }: ProductProps) => {
   return (
@@ -12,7 +13,9 @@ const Product = async ({ product }: ProductProps) => {
       <div className="page hero">
         <div className="container">
           <div className={s.layout}>
-            <SearchBar className={s.layout__search} />
+            <Suspense>
+              <SearchBar className={s.layout__search} />
+            </Suspense>
             <CustomLink href={"/catalog/"} className={s.layout__catalog}>
               Каталог комплектующих
             </CustomLink>

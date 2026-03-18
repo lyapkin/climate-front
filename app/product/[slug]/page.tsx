@@ -1,8 +1,13 @@
 import { generateMetadataUtil } from "@/src/app/utils";
-import { getProductDetailApi } from "@/src/entities/product";
+import { getProductDetailApi } from "@/src/entities/product/api";
 import { Product } from "@/src/page/product";
 import { Breadcrumbs, BreadcrumbsItem } from "@/src/widgets/breadcrumbs";
 import { Metadata, ResolvingMetadata } from "next";
+import { notFound } from "next/navigation";
+
+export async function generateStaticParams() {
+  return [{ slug: "__placeholder__" }];
+}
 
 const ProductPage = async ({
   params,
@@ -10,6 +15,9 @@ const ProductPage = async ({
   params: Promise<{ slug: string }>;
 }) => {
   const { slug } = await params;
+  if (slug === "__placeholder__") {
+    notFound();
+  }
   const product = await getProductDetailApi(slug);
 
   const offers = {
@@ -89,7 +97,7 @@ export const generateMetadata = async (
     params: Promise<{ slug: string }>;
     searchParams: Promise<{ [key: string]: string | string[] | undefined }>;
   },
-  parent: ResolvingMetadata
+  parent: ResolvingMetadata,
 ): Promise<Metadata> => {
   const { slug } = await params;
   const searchParamsData = await searchParams;
@@ -99,31 +107,36 @@ export const generateMetadata = async (
     parent,
     `catalog/${slug}/`,
     page.metadata,
-    searchParamsData
+    searchParamsData,
   );
 
   return {
     ...meta,
     openGraph: {
       type: "website",
-      images: [
-        {
-          url: page.imgs[0].url,
-          width: 1200,
-          height: 630,
-        },
-      ],
+      images:
+        page.imgs.length > 0
+          ? [
+              {
+                url: page.imgs[0].url,
+                width: 1200,
+                height: 630,
+              },
+            ]
+          : undefined,
     },
     twitter: {
       card: "summary_large_image",
-      images: [
-        {
-          url: page.imgs[0].url,
-          width: 1200,
-          height: 630,
-          // type: "image/webp",
-        },
-      ],
+      images:
+        page.imgs.length > 0
+          ? [
+              {
+                url: page.imgs[0].url,
+                width: 1200,
+                height: 630,
+              },
+            ]
+          : undefined,
     },
   };
 };

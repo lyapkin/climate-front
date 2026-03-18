@@ -3,8 +3,8 @@ import { CardSkeleton, NoResult } from "@/src/shared/ui";
 import { ProductCard } from "@/src/widgets/product";
 import { useGetProducts } from "@/src/widgets/product/utils";
 import { JSX } from "react";
-import { PromoPlugin } from "@/src/widgets/promo";
 import { ContactPlugin } from "@/src/widgets/consultation";
+import { PromoPlugin } from "@/src/widgets/promo/ui";
 
 const ProductList = () => {
   const { data, isError, isPending } = useGetProducts();

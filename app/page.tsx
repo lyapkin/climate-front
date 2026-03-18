@@ -20,7 +20,7 @@ export const generateMetadata = async (
   }: {
     searchParams: Promise<{ [key: string]: string | string[] | undefined }>;
   },
-  parent: ResolvingMetadata
+  parent: ResolvingMetadata,
 ): Promise<Metadata> => {
   const searchParamsData = await searchParams;
   const page = await getPageApi("home");

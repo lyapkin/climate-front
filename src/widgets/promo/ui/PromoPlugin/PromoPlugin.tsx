@@ -1,4 +1,3 @@
-// import { Button } from "@/src/shared/ui";
 import s from "./styles.module.css";
 import { PromoDate } from "../PromoDate";
 import { usePromos } from "../../api";

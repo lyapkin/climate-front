@@ -1,11 +1,19 @@
 import { generateMetadataUtil } from "@/src/app/utils";
-import { getPostApi } from "@/src/entities/post";
+import { getPostApi } from "@/src/entities/post/api";
 import { Post } from "@/src/page/post";
 import { Breadcrumbs, BreadcrumbsItem } from "@/src/widgets/breadcrumbs";
 import { Metadata, ResolvingMetadata } from "next";
+import { notFound } from "next/navigation";
+
+export async function generateStaticParams() {
+  return [{ slug: "__placeholder__" }];
+}
 
 const PostPage = async ({ params }: { params: Promise<{ slug: string }> }) => {
   const { slug } = await params;
+  if (slug === "__placeholder__") {
+    notFound();
+  }
   const post = await getPostApi(slug);
 
   const jsonLdBreadcrumbs = {
@@ -54,7 +62,7 @@ export const generateMetadata = async (
     params: Promise<{ slug: string }>;
     searchParams: Promise<{ [key: string]: string | string[] | undefined }>;
   },
-  parent: ResolvingMetadata
+  parent: ResolvingMetadata,
 ): Promise<Metadata> => {
   const { slug } = await params;
   const searchParamsData = await searchParams;
@@ -64,6 +72,6 @@ export const generateMetadata = async (
     parent,
     `blog/${slug}/`,
     page.metadata,
-    searchParamsData
+    searchParamsData,
   );
 };

@@ -1,9 +1,9 @@
-import { ProductDetail } from "@/src/entities/product";
 import s from "./styles.module.css";
 import { ProductImgs } from "./ProductImgs";
 import { ProductPrice } from "./ProductPrice";
 import ProductInfo from "./ProductInfo";
 import { AddToCart } from "@/src/features/cart";
+import { ProductDetail } from "@/src/entities/product/model";
 
 const ProductContent = ({ product }: ProductDetailProps) => {
   return (

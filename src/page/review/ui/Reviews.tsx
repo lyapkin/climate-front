@@ -6,12 +6,18 @@ import { getPageApi } from "@/src/shared/api";
 import { Contact } from "@/src/widgets/consultation";
 import { getReviewApi } from "@/src/entities/review/api";
 import { CustomLink } from "@/src/shared/ui";
+import { revalidateTag } from "next/cache";
 
 const Reviews = async () => {
   const [data, reviews] = await Promise.all([
     getPageApi("reviews"),
     getReviewApi(),
   ]);
+
+  if (reviews.length === 0) {
+    revalidateTag("reviews", { expire: 0 });
+  }
+
   return (
     <>
       <div className="page hero">

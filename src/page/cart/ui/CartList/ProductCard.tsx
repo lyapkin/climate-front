@@ -5,9 +5,9 @@ import Link from "next/link";
 import {
   FullPrice,
   ProductAttrs,
-  ProductCart,
   ResultPrice,
-} from "@/src/entities/product";
+} from "@/src/entities/product/ui";
+import { ProductCart } from "@/src/entities/product/model";
 
 const ProductCard = ({ product, action }: ProductCardProps) => {
   return (

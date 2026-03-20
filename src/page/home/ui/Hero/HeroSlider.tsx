@@ -42,6 +42,8 @@ const HeroSlider = () => {
               alt="Кондиционер"
               fill
               style={{ objectFit: "contain" }}
+              preload={i === 0 ? true : false}
+              loading={i === 0 ? "eager" : "lazy"}
             />
           </SwiperSlide>
         ))}

@@ -201,7 +201,7 @@
   }
   .heroSection {
     background-image:
-      url("/images/home/hero/bg.png"), linear-gradient(transparent 80%, #fff);
+      url("/images/home/hero/bg.webp"), linear-gradient(transparent 80%, #fff);
   }
 }
 

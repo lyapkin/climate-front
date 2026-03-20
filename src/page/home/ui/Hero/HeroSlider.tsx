@@ -44,6 +44,7 @@ const HeroSlider = () => {
               style={{ objectFit: "contain" }}
               loading={i === 0 ? "eager" : "lazy"}
               fetchPriority={i === 0 ? "high" : "auto"}
+              sizes="(max-width: 780px) 100vw, 50vw"
             />
           </SwiperSlide>
         ))}
